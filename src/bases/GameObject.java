@@ -12,7 +12,7 @@ public class GameObject {
      public boolean isActive;
 
 
-    
+
     public GameObject(int x,int y) {
         position=new Vector2D(x,y);
         renderer=null;
