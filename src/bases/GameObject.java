@@ -6,10 +6,11 @@ import java.util.ArrayList;
 public class GameObject {
     Vector2D position;
      Renderer renderer;
-     // public BoxCollider boxCollider;
+      public BoxCollider boxCollider;
      static private ArrayList<GameObject> gameObjects=new ArrayList<>();
      private static ArrayList<GameObject> newGameObjects=new ArrayList<>();
     public boolean isActive;
+
 
     
     public GameObject(int x,int y) {
@@ -44,6 +45,5 @@ public class GameObject {
                 go.render(backBufferGraphic);
             }
         }
-
     }
 }
