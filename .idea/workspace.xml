@@ -1,51 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c11b7cc-09e1-4e77-a665-6001032d39a8" name="Default Changelist" comment="By Hieu, Day1_Update1">
-      <change afterPath="$PROJECT_DIR$/images/background/Background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Run1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Run10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Run2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Run3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Run4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Run5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Run6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Run7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Run8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Run9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Walk1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Walk2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Walk3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Walk4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Walk5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zombie/Walk6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bases/Animation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bases/ImageRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bases/ImageUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/Background.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zombie/Zombie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zombie/ZombieSpawner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8c11b7cc-09e1-4e77-a665-6001032d39a8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/.idea/src.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/BoxCollider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/BoxCollider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/GameObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/Renderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/Renderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameCanvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameCanvas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/src.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bases/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bases/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bases/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bases/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameCanvas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameWindow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,11 +66,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="662" />
+          <entry key="txt" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="662" />
+          <entry key="PLAIN_TEXT" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -136,8 +95,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/zombie/Zombie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+            <state relative-caret-position="238">
+              <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#472#473#0" expanded="true" />
@@ -273,36 +232,7 @@
             <path>
               <item name="CI_TheRescueDoctor" type="b2602c69:ProjectViewProjectNode" />
               <item name="CI_TheRescueDoctor" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CI_TheRescueDoctor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CI_TheRescueDoctor" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="zombie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CI_TheRescueDoctor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CI_TheRescueDoctor" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CI_TheRescueDoctor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CI_TheRescueDoctor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bases" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CI_TheRescueDoctor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CI_TheRescueDoctor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CI_TheRescueDoctor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CI_TheRescueDoctor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="zombie" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -314,7 +244,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537385635932" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537385832712" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -391,14 +321,21 @@
       <option name="project" value="LOCAL" />
       <updated>1537335649255</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="By Hieu, Day2, ZombieSpawner, Run, animation">
+      <created>1537385757955</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1537385757955</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2685325" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2685325" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -407,7 +344,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.12295082" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.12295082" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -459,7 +396,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="box collider &amp; frame counter" />
     <MESSAGE value="Box collider &amp; frame counter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Box collider &amp; frame counter" />
+    <MESSAGE value="By Hieu, Day2, ZombieSpawner, Run, animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="By Hieu, Day2, ZombieSpawner, Run, animation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/bases/FrameCounter.java">
@@ -595,8 +533,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/zombie/Zombie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        <state relative-caret-position="238">
+          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#472#473#0" expanded="true" />
