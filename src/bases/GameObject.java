@@ -1,11 +1,13 @@
 package bases;
 
+import zombie.ZombieSpawner;
+
 import java.awt.*;
 import java.util.ArrayList;
 
 public class GameObject {
-    Vector2D position;
-     Renderer renderer;
+   public Vector2D position;
+    public Renderer renderer;
      public BoxCollider boxCollider;
      static private ArrayList<GameObject> gameObjects=new ArrayList<>();
      private static ArrayList<GameObject> newGameObjects=new ArrayList<>();
@@ -21,18 +23,27 @@ public class GameObject {
 
     }
 
+    public static void add(GameObject object){
+        newGameObjects.add(object);
+    }
+
     public GameObject() {
         this(0,0);
     }
 
     public void run(){
-
+          if(boxCollider!=null){
+              boxCollider.position.x=this.position.x;
+              boxCollider.position.y=this.position.y;
+          }
     }
 
     public static void runAll() {
         for (GameObject go: gameObjects) {
             go.run();
         }
+        gameObjects.addAll(newGameObjects);
+        ZombieSpawner.zombieSpawner.addZombie();
     }
 
     public void render(Graphics g){

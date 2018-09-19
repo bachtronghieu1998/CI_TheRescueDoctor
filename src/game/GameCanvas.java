@@ -10,10 +10,11 @@ public class GameCanvas extends JPanel {
 
     BufferedImage backBuffer;
     Graphics backBufferGraphic;
-    public GameCanvas(){
 
+    public GameCanvas(){
+           GameObject.add(new Background(0,0));
            // Resize when have background
-            backBuffer=new BufferedImage(600,800,BufferedImage.TYPE_INT_ARGB );
+            backBuffer=new BufferedImage(886,667,BufferedImage.TYPE_INT_ARGB );
             backBufferGraphic=backBuffer.getGraphics();
     }
 

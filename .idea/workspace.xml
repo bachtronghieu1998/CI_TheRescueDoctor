@@ -1,8 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4039a97e-0922-4995-b660-721ebeacf5e4" name="Default Changelist" comment="">
+    <list default="true" id="8c11b7cc-09e1-4e77-a665-6001032d39a8" name="Default Changelist" comment="By Hieu, Day1_Update1">
+      <change afterPath="$PROJECT_DIR$/images/background/Background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Run1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Run10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Run2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Run3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Run4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Run5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Run6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Run7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Run8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Run9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Walk1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Walk2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Walk3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Walk4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Walk5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zombie/Walk6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bases/Animation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bases/ImageRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bases/ImageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/Background.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zombie/Zombie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zombie/ZombieSpawner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/.idea/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/BoxCollider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/BoxCollider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/Renderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/Renderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameCanvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameCanvas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bases/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bases/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bases/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bases/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameCanvas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameWindow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,29 +87,107 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1150137772">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.57" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="12" />
+          <entry key="png" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Image" value="11" />
+          <entry key="JAVA" value="12" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="662" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="662" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/GameCanvas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="249">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#495#496#0" expanded="true" />
-                <element signature="e#543#544#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
-                <element signature="e#602#603#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/zombie/Zombie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#472#473#0" expanded="true" />
+                <element signature="e#491#492#0" expanded="true" />
+                <element signature="e#471#472#0" expanded="true" />
+                <element signature="e#502#503#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bases/ImageUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/zombie/ZombieSpawner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="45" column="48" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#578#579#0" expanded="true" />
+                <element signature="e#620#621#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bases/BoxCollider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="-34">
               <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding>
                 <element signature="e#376#377#0" expanded="true" />
@@ -81,28 +202,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
+        <entry file="file://$PROJECT_DIR$/images/zombie/Run7.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/GameWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-189">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            <state relative-caret-position="221">
+              <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bases/FrameCounter.java">
+        <entry file="file://$PROJECT_DIR$/src/game/Background.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Program.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+            <state relative-caret-position="187">
+              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -122,19 +239,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/game/GameCanvas.java" />
         <option value="$PROJECT_DIR$/src/bases/FrameCounter.java" />
         <option value="$PROJECT_DIR$/src/bases/BoxCollider.java" />
+        <option value="$PROJECT_DIR$/src/game/Background.java" />
+        <option value="$PROJECT_DIR$/src/bases/Renderer.java" />
+        <option value="$PROJECT_DIR$/src/game/GameWindow.java" />
+        <option value="$PROJECT_DIR$/src/game/GameCanvas.java" />
         <option value="$PROJECT_DIR$/src/bases/GameObject.java" />
+        <option value="$PROJECT_DIR$/src/zombie/ZombieSpawner.java" />
+        <option value="$PROJECT_DIR$/src/zombie/Zombie.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="110" />
-    <option name="y" value="10" />
-    <option name="width" value="1750" />
-    <option name="height" value="970" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -150,13 +273,18 @@
             <path>
               <item name="CI_TheRescueDoctor" type="b2602c69:ProjectViewProjectNode" />
               <item name="CI_TheRescueDoctor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CI_TheRescueDoctor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CI_TheRescueDoctor" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="zombie" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CI_TheRescueDoctor" type="b2602c69:ProjectViewProjectNode" />
               <item name="CI_TheRescueDoctor" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CI_TheRescueDoctor" type="b2602c69:ProjectViewProjectNode" />
@@ -170,21 +298,40 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CI_TheRescueDoctor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CI_TheRescueDoctor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="zombie" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537329321001" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537385635932" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hieu bach\Documents\CI\CI_TheRescueDoctor\images\zombie" />
+      <recent name="C:\Users\hieu bach\Documents\CI\CI_TheRescueDoctor\images\background" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="game" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hieu bach\Documents\CI\CI_TheRescueDoctor\src\bases" />
+      <recent name="C:\Users\hieu bach\Documents\CI\CI_TheRescueDoctor" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -217,7 +364,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4039a97e-0922-4995-b660-721ebeacf5e4" name="Default Changelist" comment="" />
+      <changelist id="8c11b7cc-09e1-4e77-a665-6001032d39a8" name="Default Changelist" comment="By Hieu, Day1_Update1" />
       <created>1537323491260</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -248,10 +395,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="88" y="8" width="1400" height="776" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25373134" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2685325" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -259,16 +406,16 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32919255" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.12295082" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32919255" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.32786885" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49924356" weight="0.2262295" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3295082" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -278,6 +425,33 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3295082" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -288,13 +462,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Box collider &amp; frame counter" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bases/FrameCounter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -302,30 +469,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/GameCanvas.java">
+    <entry file="file://$PROJECT_DIR$/src/bases/Vector2D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
+    <entry file="file://$PROJECT_DIR$/src/Program.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        <state relative-caret-position="102">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/background/Background.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bases/ImageRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bases/Renderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bases/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/Background.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/zombie/Run4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/zombie/Run3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/zombie/Run6.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/zombie/Run7.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bases/BoxCollider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="-34">
           <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding>
             <element signature="e#376#377#0" expanded="true" />
@@ -334,6 +537,72 @@
             <element signature="e#508#509#0" expanded="true" />
             <element signature="e#535#536#0" expanded="true" />
             <element signature="e#588#589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/GameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/background/Background.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bases/ImageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/zombie/Run5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="45" column="48" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#620#621#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/GameCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zombie/ZombieSpawner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zombie/Zombie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
           </folding>
         </state>
       </provider>
