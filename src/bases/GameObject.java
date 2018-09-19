@@ -17,6 +17,7 @@ public class GameObject {
         position=new Vector2D(x,y);
         renderer=null;
         this.isActive=true;
+        this.boxCollider = null;
 
     }
 
