@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c11b7cc-09e1-4e77-a665-6001032d39a8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/Program.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/BoxCollider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/GameObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/Renderer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/bases/Vector2D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameCanvas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameWindow$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameWindow$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/game/GameWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CI_TheRescueDoctor/inputs/InputManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bases/BoxCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bases/BoxCollider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bases/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bases/GameObject.java" afterDir="false" />
-    </list>
+    <list default="true" id="8c11b7cc-09e1-4e77-a665-6001032d39a8" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,11 +117,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/zombie/Zombie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1717">
-              <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+            <state relative-caret-position="276">
+              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,26 +130,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/zombie/Zombie.java">
+        <entry file="file://$PROJECT_DIR$/src/zombie/ZombieSpawner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="391">
+              <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/bases/BoxCollider.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bases/ImageUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="207">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1219">
+              <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
               <folding>
-                <element signature="e#376#377#0" expanded="true" />
-                <element signature="e#430#431#0" expanded="true" />
-                <element signature="e#456#457#0" expanded="true" />
-                <element signature="e#508#509#0" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
-                <element signature="e#588#589#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -203,10 +196,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="111" />
-    <option name="y" value="16" />
-    <option name="width" value="1754" />
-    <option name="height" value="934" />
+    <option name="x" value="6" />
+    <option name="y" value="23" />
+    <option name="width" value="1346" />
+    <option name="height" value="748" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -214,7 +207,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,8 +255,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,10 +353,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="89" y="13" width="1403" height="747" extended-state="0" />
-    <editor active="true" />
+    <frame x="9" y="18" width="1346" height="748" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16530156" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.251944" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -496,9 +488,24 @@
     <entry file="file://$PROJECT_DIR$/src/player/Player.java" />
     <entry file="file://$PROJECT_DIR$/src/player/PlayerShoot.java" />
     <entry file="file://$PROJECT_DIR$/src/player/PlayerMove.java" />
-    <entry file="file://$PROJECT_DIR$/src/zombie/ZombieSpawner.java" />
+    <entry file="file://$PROJECT_DIR$/src/zombie/ZombieSpawner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bases/ImageRenderer.java" />
-    <entry file="file://$PROJECT_DIR$/src/bases/ImageUtil.java" />
+    <entry file="file://$PROJECT_DIR$/src/bases/ImageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/player/PlayerBullet.java" />
     <entry file="file://$PROJECT_DIR$/src/player/PlayerAnimator.java" />
     <entry file="file://$PROJECT_DIR$/src/game/GameCanvas.java">
@@ -513,18 +520,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+        <state relative-caret-position="1219">
+          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/zombie/Zombie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -539,6 +539,16 @@
             <element signature="e#508#509#0" expanded="true" />
             <element signature="e#535#536#0" expanded="true" />
             <element signature="e#588#589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zombie/Zombie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
