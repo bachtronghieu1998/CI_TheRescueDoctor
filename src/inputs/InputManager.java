@@ -3,11 +3,11 @@ package inputs;
 import java.awt.event.KeyEvent;
 
 public class InputManager {
-    boolean rightPressed = false;
-    boolean leftPressed = false;
-    boolean upPressed = false;
-    boolean downPressed = false;
-    boolean spacePressed = false;
+    public boolean rightPressed = false;
+    public boolean leftPressed = false;
+    public boolean upPressed = false;
+    public boolean downPressed = false;
+    public boolean xPressed = false;
 
     public static InputManager instance = new InputManager();
 
@@ -24,8 +24,8 @@ public class InputManager {
         else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             downPressed = true;
         }
-        else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            spacePressed = true;
+        else if (e.getKeyCode() == KeyEvent.VK_X) {
+            xPressed = true;
         }
     }
 
@@ -42,8 +42,8 @@ public class InputManager {
         else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             downPressed = false;
         }
-        else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            spacePressed = false;
+        else if (e.getKeyCode() == KeyEvent.VK_X) {
+            xPressed = false;
         }
     }
 }
