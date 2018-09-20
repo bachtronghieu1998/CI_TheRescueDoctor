@@ -3,6 +3,7 @@ package bases;
 import zombie.ZombieSpawner;
 
 import java.awt.*;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 public class GameObject {
@@ -43,7 +44,8 @@ public class GameObject {
             go.run();
         }
         gameObjects.addAll(newGameObjects);
-        ZombieSpawner.zombieSpawner.addZombie();
+        newGameObjects.clear();
+        System.out.println(gameObjects.size());
     }
 
     public void render(Graphics g){
@@ -58,4 +60,40 @@ public class GameObject {
             }
         }
     }
+
+    public static   <T extends GameObject> T generic(int x,int y, Class<T> cls){
+        T pb=null;
+        for(int i=0;i<gameObjects.size();i++){
+            if(!gameObjects.get(i).isActive){
+                if(gameObjects.get(i).getClass().equals(cls)){
+                    pb=(T)gameObjects.get(i);
+                }
+            }
+        }
+
+        if(pb==null){
+            try {
+             pb=   cls.getConstructor(int.class ,int.class).newInstance(x,y);
+             add(pb);
+
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            }
+
+        }else{
+            pb.isActive=true;
+            pb.position.x=x;
+            pb.position.y=y;
+        }
+        return pb;
+    }
+
+
+
 }

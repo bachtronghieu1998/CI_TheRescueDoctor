@@ -1,6 +1,7 @@
 package game;
 
 import bases.GameObject;
+import zombie.ZombieSpawner;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,9 +11,9 @@ public class GameCanvas extends JPanel {
 
     BufferedImage backBuffer;
     Graphics backBufferGraphic;
-
     public GameCanvas(){
            GameObject.add(new Background(0,0));
+           GameObject.add(new ZombieSpawner());
            // Resize when have background
             backBuffer=new BufferedImage(886,667,BufferedImage.TYPE_INT_ARGB );
             backBufferGraphic=backBuffer.getGraphics();

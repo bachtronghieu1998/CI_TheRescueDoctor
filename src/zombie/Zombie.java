@@ -17,13 +17,24 @@ public class Zombie extends GameObject {
                 ImageUtil.LoadImage("images/zombie/Run10.png")
 
         );
-        boxCollider=new BoxCollider(x,y,50,50);
+        boxCollider=new BoxCollider(x,y,50,50); // change after
+    }
+
+    public Zombie() {
+       this(0,0);
     }
 
     @Override
     public void run() {
         super.run();
         zombieRun();
+        detectiveIfNeeded();
+    }
+
+    private void detectiveIfNeeded() {
+        if(this.position.x==0){
+            this.isActive=false;
+        }
     }
 
     private void zombieRun() {
