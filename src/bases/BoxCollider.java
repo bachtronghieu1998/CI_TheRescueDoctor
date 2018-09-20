@@ -22,6 +22,14 @@ public class BoxCollider extends GameObject{
     private float right(){
         return this.position.x + this.width/2;
     }
+    public boolean collideWith(BoxCollider other){
+        // this vs other
+        boolean xOverlap = this.left() <= other.right() &&
+                other.left()<=this.right();
+        boolean yOverlap = this.top() <= other.bot()&&
+                other.top()<=this.bot();
+        return xOverlap&&yOverlap;
+    }
 
     @Override
     public void render(Graphics g) {

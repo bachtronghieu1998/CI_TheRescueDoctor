@@ -1,5 +1,6 @@
 package bases;
 
+import zombie.Zombie;
 import zombie.ZombieSpawner;
 
 import java.awt.*;
@@ -98,6 +99,17 @@ public class GameObject {
         return pb;
     }
 
-
-
+    public static Zombie checkCollisionZ(BoxCollider boxCollider){
+        Zombie result = null;
+        for (GameObject go:gameObjects){
+            if(go.isActive&&go.boxCollider !=null){
+                if (go instanceof Zombie){
+                    if (go.boxCollider.collideWith(boxCollider)){
+                        result =(Zombie)go;
+                    }
+                }
+            }
+        }
+        return result;
+    }
 }
