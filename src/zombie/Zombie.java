@@ -33,7 +33,7 @@ public class Zombie extends GameObject {
     }
 
     private void hitPlayer() {
-        Player player = GameObject.checkCollisionP(this.boxCollider);
+        Player player = GameObject.checkCollision(this.boxCollider,Player.class);
             if (player!=null){
                 System.out.println("Game over");
                 player.getHit();

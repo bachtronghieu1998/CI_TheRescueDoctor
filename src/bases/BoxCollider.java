@@ -3,8 +3,8 @@ package bases;
 import java.awt.*;
 
 public class BoxCollider extends GameObject{
-    private int width;
-    private int height;
+    public int width;
+    public int height;
     public BoxCollider(int x, int y, int width,int height) {
         super(x, y);
         this.width = width;

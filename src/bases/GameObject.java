@@ -37,6 +37,7 @@ public class GameObject {
           if(boxCollider!=null){
               boxCollider.position.x=this.position.x;
               boxCollider.position.y=this.position.y;
+              boxCollider.run();
           }
     }
 
@@ -67,6 +68,8 @@ public class GameObject {
             }
         }
     }
+
+
 
     public static   <T extends GameObject> T generic(int x,int y, Class<T> cls){
         T pb=null;
@@ -101,32 +104,20 @@ public class GameObject {
         return pb;
     }
 
-    public static Zombie checkCollision(BoxCollider boxCollider){
-        Zombie result = null;
-        for (GameObject go:gameObjects){
-            if(go.isActive&&go.boxCollider !=null){
-                if (go instanceof Zombie){
-                    if (go.boxCollider.collideWith(boxCollider)){
-                        result =(Zombie) go;
-                    }
-                }
-            }
-        }
-        return result;
-    }
 
-    public static Player checkCollisionP(BoxCollider boxCollider){
-        Player result = null;
-        for (GameObject go:gameObjects){
-            if(go.isActive&&go.boxCollider != null){
-                if (go instanceof Player){
-                    if (go.boxCollider.collideWith(boxCollider)){
-                        result=(Player) go;
+
+    //generics
+    public static <T extends GameObject> T checkCollision(BoxCollider boxCollider,Class<T> cls){
+        for(GameObject go: gameObjects){
+            if(go.isActive && go.boxCollider !=null){
+                if(go.getClass().equals(cls)){
+                    if(go.boxCollider.collideWith(boxCollider)){
+                        return (T) go;
                     }
                 }
             }
         }
-        return result;
+        return null;
     }
 
     protected void destroy() {

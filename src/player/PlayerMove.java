@@ -20,7 +20,7 @@ public class PlayerMove {
             velocity.x -= 3;
         }
         if (InputManager.instance.upPressed) {
-            velocity.y -= 8;
+            velocity.y -=20;
         }
         if (InputManager.instance.downPressed) {
             if(position.y>=550) return;

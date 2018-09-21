@@ -1,5 +1,6 @@
 package player;
 
+import Platform.Platform;
 import bases.Animation;
 import bases.BoxCollider;
 import bases.GameObject;
@@ -12,7 +13,7 @@ public class Player extends GameObject {
     PlayerMove playerMove;
     PlayerShoot playerShoot;
     PlayerAnimator playerAnimator;
-    public final float gravity=1f;
+    public final float gravity=0.5f;
     Vector2D verlocity;
     public Player(int x, int y) {
         super(x,y);
@@ -38,22 +39,21 @@ public class Player extends GameObject {
     private void moveVertical() {
         //Predict collider
         BoxCollider nextBoxCollider=this.boxCollider.shift(0,verlocity.y);
-//        Platform platform = Physics.collideWith(nextBoxCollider, Platform.class);
-          boolean collisio=false;
 
+        Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
 
-        if(nextBoxCollider.position.y>=550){
+        if(platform!=null){
+            System.out.println("++++++++++++++++++++++++++++++++++++++++");
             boolean moveContinue=true;
             float distance=1;
             while (moveContinue){
                 BoxCollider temp = this.boxCollider.shift(0,distance);
-                if(temp.position.y>=550){
+                if(GameObject.checkCollision(temp,Platform.class)!=null){
                     moveContinue=false;
                 }else{
                     distance++;
                     position.addUp(0,1);
                 }
-
             }
             verlocity.y=0;
         }
