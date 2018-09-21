@@ -1,7 +1,7 @@
 package bases;
 
+import player.Player;
 import zombie.Zombie;
-import zombie.ZombieSpawner;
 
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
@@ -14,7 +14,7 @@ public class GameObject {
      static private ArrayList<GameObject> gameObjects=new ArrayList<>();
      private static ArrayList<GameObject> newGameObjects=new ArrayList<>();
      public boolean isActive;
-
+    public boolean isAlive;
 
 
     public GameObject(int x,int y) {
@@ -22,7 +22,7 @@ public class GameObject {
         renderer=null;
         this.isActive=true;
         this.boxCollider = null;
-
+        this.isAlive=true;
     }
 
     public static void add(GameObject object){
@@ -99,17 +99,40 @@ public class GameObject {
         return pb;
     }
 
-    public static Zombie checkCollisionZ(BoxCollider boxCollider){
+    public static Zombie checkCollision(BoxCollider boxCollider){
         Zombie result = null;
         for (GameObject go:gameObjects){
             if(go.isActive&&go.boxCollider !=null){
                 if (go instanceof Zombie){
                     if (go.boxCollider.collideWith(boxCollider)){
-                        result =(Zombie)go;
+                        result =(Zombie) go;
                     }
                 }
             }
         }
         return result;
+    }
+
+    public static Player checkCollisionP(BoxCollider boxCollider){
+        Player result = null;
+        for (GameObject go:gameObjects){
+            if(go.isActive&&go.boxCollider != null){
+                if (go instanceof Player){
+                    if (go.boxCollider.collideWith(boxCollider)){
+                        result=(Player) go;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    protected void destroy() {
+        this.isActive = false;
+    }
+
+    protected void gameOver() {
+        this.isAlive=false;
+        System.exit(0);
     }
 }
