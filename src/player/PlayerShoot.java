@@ -10,7 +10,14 @@ public class PlayerShoot {
 
     public void run(Player player) {
         if (InputManager.instance.xPressed && !shootLock) {
-            GameObject.generic((int)player.position.x,(int)player.position.y,PlayerBullet.class);
+            if (PlayerAnimator.currentAnimation == PlayerAnimator.leftAnimation ||
+                PlayerAnimator.currentAnimation == PlayerAnimator.straightlAnimation){
+                GameObject.generic((int)player.position.x,(int)player.position.y,PlayerBulletl.class);
+            }
+            else {
+                GameObject.generic((int)player.position.x,(int)player.position.y,PlayerBullet.class);
+            }
+
             shootLock = true;
         }
 
