@@ -24,7 +24,7 @@ public class PlayerBulletl extends GameObject {
 
     private void deactiveIfNeeded() {
         if (this.position.x < 0) {
-            this.isActive = true;
+            this.isActive = false;
         }
     }
 }
