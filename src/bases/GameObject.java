@@ -42,7 +42,9 @@ public class GameObject {
 
     public static void runAll() {
         for (GameObject go: gameObjects) {
-            go.run();
+            if(go.isActive){
+                go.run();
+            }
         }
         gameObjects.addAll(newGameObjects);
         newGameObjects.clear();

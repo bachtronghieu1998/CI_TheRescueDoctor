@@ -26,7 +26,7 @@ public class PlayerBullet extends GameObject {
         Zombie zombie = GameObject.checkCollision(this.boxCollider);
         if (zombie!=null){
             zombie.getHit();
-            this.destroy();
+            this.isActive=false;
         }
     }
 
