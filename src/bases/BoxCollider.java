@@ -10,6 +10,21 @@ public class BoxCollider extends GameObject{
         this.width = width;
         this.height = height;
     }
+
+    public BoxCollider(int x,int y){
+         this(0,0,x,y);
+    }
+
+    public BoxCollider shift(float dx, float dy){
+        BoxCollider shiftedBoxCollider=new BoxCollider(this.width,this.height);
+       Vector2D temp= this.position.add(dx,dy);
+        shiftedBoxCollider.position.x=temp.x;
+        shiftedBoxCollider.position.y=temp.y;
+      //  shiftedBoxCollider.screenPosition.set(this.screenPosition.add(dx,dy));
+
+
+        return shiftedBoxCollider;
+    }
     private float top(){
         return this.position.y - this.height/2;
     }

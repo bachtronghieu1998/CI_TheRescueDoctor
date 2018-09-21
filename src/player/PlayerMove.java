@@ -20,11 +20,13 @@ public class PlayerMove {
             velocity.x -= 3;
         }
         if (InputManager.instance.upPressed) {
-            velocity.y -= 3;
+            velocity.y -= 8;
         }
         if (InputManager.instance.downPressed) {
+            if(position.y>=550) return;
             velocity.y += 3;
         }
+
         position.addUp(velocity);
     }
 }
