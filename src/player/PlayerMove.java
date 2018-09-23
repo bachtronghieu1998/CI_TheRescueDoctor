@@ -25,18 +25,21 @@ public class PlayerMove {
         if (InputManager.instance.upPressed) {
                 BoxCollider colliderBottom=player.boxCollider.shift(0,1);
                 if(GameObject.checkCollision(colliderBottom, Platform.class)!=null){
+//                    this.velocityGravity.y -=10;
                     this.velocity.y -=15;
                 }
         }
         moveHorizontal(player);
 
         moveVertical(player);
+
     }
 
         private void moveHorizontal(Player player) {
         BoxCollider nextBoxCollider=player.boxCollider.shift(this.velocity.x,0);
         Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
         if(platform!=null){
+//            System.out.println("aaaaaaaaaaaa");
             boolean moveContinue=true;
             float distance=Math.signum(velocity.x);
             while (moveContinue){
@@ -58,7 +61,9 @@ public class PlayerMove {
     public void moveVertical(Player player) {
         //Predict collider
         BoxCollider nextBoxCollider=player.boxCollider.shift(0,this.velocity.y);
+
         Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
+
         if(platform!=null){
             boolean moveContinue=true;
             float distance=1;

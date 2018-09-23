@@ -11,8 +11,8 @@ public class BoxCollider extends GameObject{
         this.height = height;
     }
 
-    public BoxCollider(int x,int y){
-         this(0,0,x,y);
+    public BoxCollider(int width,int height){
+         this(0,0,width,height);
     }
 
     public BoxCollider shift(float dx, float dy){
@@ -22,9 +22,9 @@ public class BoxCollider extends GameObject{
         shiftedBoxCollider.position.y=temp.y;
       //  shiftedBoxCollider.screenPosition.set(this.screenPosition.add(dx,dy));
 
-
         return shiftedBoxCollider;
     }
+
     private float top(){
         return this.position.y - this.height/2;
     }
