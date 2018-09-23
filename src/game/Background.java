@@ -13,7 +13,4 @@ public class Background extends GameObject {
         renderer =new ImageRenderer("images/background/Background.png");
     }
 
-    public void render(Graphics g){
-       ImageUtil.DrawImage(g, renderer.img,0,0);
-    }
 }

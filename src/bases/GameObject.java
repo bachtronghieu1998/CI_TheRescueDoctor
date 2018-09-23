@@ -57,7 +57,7 @@ public class GameObject {
         }
 
         if (this.boxCollider != null) {
-            this.boxCollider.render(g);
+//            this.boxCollider.render(g);
         }
     }
     public static void renderAll(Graphics backBufferGraphic) {
@@ -101,13 +101,13 @@ public class GameObject {
         return pb;
     }
 
-    public static Zombie checkCollision(BoxCollider boxCollider){
-        Zombie result = null;
+    public static <Q extends GameObject> Q checkCollision(BoxCollider boxCollider, Class<Q> cls){
+        Q result = null;
         for (GameObject go:gameObjects){
             if(go.isActive&&go.boxCollider !=null){
-                if (go instanceof Zombie){
+                if (go.getClass().equals(cls)){
                     if (go.boxCollider.collideWith(boxCollider)){
-                        result =(Zombie) go;
+                        result =(Q) go;
                     }
                 }
             }

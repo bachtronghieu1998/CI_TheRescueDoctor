@@ -1,7 +1,12 @@
 package player;
 
+import bases.BoxCollider;
+import bases.GameObject;
 import bases.Vector2D;
+import game.Platform;
 import inputs.InputManager;
+
+import javax.swing.*;
 
 public class PlayerMove {
     public Vector2D velocity;
@@ -10,7 +15,7 @@ public class PlayerMove {
         velocity = new Vector2D();
     }
 
-    public void run(Vector2D position) {
+    public void run(Player player) {
         velocity.x = 0;
         velocity.y = 0;
         if (InputManager.instance.rightPressed) {
@@ -20,13 +25,15 @@ public class PlayerMove {
             velocity.x -= 3;
         }
         if (InputManager.instance.upPressed) {
-            velocity.y -= 8;
+            BoxCollider boxColliderAtBottom = player.boxCollider.shift(0,1);
+            if (GameObject.checkCollision(boxColliderAtBottom,Platform.class) != null) {
+                player.velocity.y -= 12;
+            }
         }
-        if (InputManager.instance.downPressed) {
-            if(position.y>=550) return;
-            velocity.y += 3;
-        }
+//        if (InputManager.instance.downPressed) {
+//            velocity.y += 3;
+//        }
 
-        position.addUp(velocity);
+        player.position.addUp(velocity);
     }
 }

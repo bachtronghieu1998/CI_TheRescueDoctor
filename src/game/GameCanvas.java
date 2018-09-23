@@ -13,9 +13,10 @@ public class GameCanvas extends JPanel {
     BufferedImage backBuffer;
     Graphics backBufferGraphic;
     public GameCanvas(){
-           GameObject.add(new Background(0,0));
-           GameObject.add(new Player(100,550));
+           GameObject.add(new Background(443,333));
+           GameObject.add(new Player(100,200));
            GameObject.add(new ZombieSpawner());
+           GameObject.add(new Platform(443,604));
            // Resize when have background
             backBuffer=new BufferedImage(886,667,BufferedImage.TYPE_INT_ARGB );
             backBufferGraphic=backBuffer.getGraphics();
