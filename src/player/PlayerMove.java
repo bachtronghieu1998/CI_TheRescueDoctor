@@ -1,5 +1,8 @@
 package player;
 
+import Platform.Platform;
+import bases.BoxCollider;
+import bases.GameObject;
 import bases.Vector2D;
 import inputs.InputManager;
 
@@ -10,9 +13,9 @@ public class PlayerMove {
         velocity = new Vector2D();
     }
 
-    public void run(Vector2D position) {
+    public void run(Player player) {
         velocity.x = 0;
-        velocity.y = 0;
+        this. velocity.y+=player.gravity;
         if (InputManager.instance.rightPressed) {
             velocity.x += 3;
         }
@@ -20,13 +23,56 @@ public class PlayerMove {
             velocity.x -= 3;
         }
         if (InputManager.instance.upPressed) {
-            velocity.y -=20;
+                BoxCollider colliderBottom=player.boxCollider.shift(0,1);
+                if(GameObject.checkCollision(colliderBottom, Platform.class)!=null){
+                    this.velocity.y -=15;
+                }
         }
-        if (InputManager.instance.downPressed) {
-            if(position.y>=550) return;
-            velocity.y += 3;
-        }
+        moveHorizontal(player);
 
-        position.addUp(velocity);
+        moveVertical(player);
+    }
+
+        private void moveHorizontal(Player player) {
+        BoxCollider nextBoxCollider=player.boxCollider.shift(this.velocity.x,0);
+        Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
+        if(platform!=null){
+            boolean moveContinue=true;
+            float distance=Math.signum(velocity.x);
+            while (moveContinue){
+                BoxCollider temp = player.boxCollider.shift(distance,0);
+                if(GameObject.checkCollision(temp,Platform.class)!=null){
+                    moveContinue=false;
+                }else{
+                    distance+=Math.signum(velocity.x);
+                    player.position.addUp(Math.signum(velocity.x),0);
+                }
+            }
+            this.velocity.x=0;
+        }
+            player.position.addUp(velocity.x,0);
+    }
+
+
+
+    public void moveVertical(Player player) {
+        //Predict collider
+        BoxCollider nextBoxCollider=player.boxCollider.shift(0,this.velocity.y);
+        Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
+        if(platform!=null){
+            boolean moveContinue=true;
+            float distance=1;
+            while (moveContinue){
+                BoxCollider temp = player.boxCollider.shift(0,distance);
+                if(GameObject.checkCollision(temp,Platform.class)!=null){
+                    moveContinue=false;
+                }else{
+                    distance+=1;;
+                    player.position.addUp(0,1);
+                }
+            }
+            this.velocity.y=0;
+        }
+        player.position.addUp(0,velocity.y);
     }
 }

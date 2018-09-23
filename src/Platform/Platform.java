@@ -2,21 +2,21 @@ package Platform;
 
 import bases.BoxCollider;
 import bases.GameObject;
+import bases.ImageRenderer;
 
 import java.awt.*;
 
 public class Platform extends GameObject
 {
-   BoxCollider boxCollider;
 
-    public Platform(int x,int y,int width,int height) {
-        super();
-        boxCollider=new BoxCollider(x,y,width,height);
+    public Platform(int x,int y,int width,int height,String url) {
+        super(x,y);
+        this.boxCollider=new BoxCollider(x,y,width,height);
+        if(url!=null){
+            this.renderer=new ImageRenderer(url);
+
+        }
     }
 
-    @Override
-    public void render(Graphics g) {
 
-        g.drawRect((int)boxCollider.position.x,(int)boxCollider.position.y,boxCollider.width,boxCollider.height);
-    }
 }

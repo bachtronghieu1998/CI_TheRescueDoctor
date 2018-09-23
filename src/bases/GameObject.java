@@ -49,7 +49,6 @@ public class GameObject {
         }
         gameObjects.addAll(newGameObjects);
         newGameObjects.clear();
-        System.out.println(gameObjects.size());
     }
 
     public void render(Graphics g){
