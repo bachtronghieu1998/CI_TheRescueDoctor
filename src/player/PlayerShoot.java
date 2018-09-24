@@ -7,11 +7,13 @@ import inputs.InputManager;
 public class PlayerShoot {
     private boolean shootLock;
     FrameCounter frameCounter = new FrameCounter(20);
+    int count = 10;
+    boolean limit = true;
 
     public void run(Player player) {
-        if (InputManager.instance.xPressed && !shootLock) {
+        if (InputManager.instance.xPressed && !shootLock && limit) {
             if (PlayerAnimator.currentAnimation == PlayerAnimator.leftAnimation ||
-                PlayerAnimator.currentAnimation == PlayerAnimator.straightlAnimation){
+                    PlayerAnimator.currentAnimation == PlayerAnimator.straightlAnimation){
                 GameObject.generic((int)player.position.x,(int)player.position.y,PlayerBulletl.class);
             }
             else {
@@ -19,6 +21,10 @@ public class PlayerShoot {
             }
 
             shootLock = true;
+            count--;
+            if (count == 0) {
+                limit = false;
+            }
         }
 
         if (shootLock) {
@@ -28,7 +34,5 @@ public class PlayerShoot {
                 shootLock = false;
             }
         }
-
-
     }
 }
