@@ -25,21 +25,18 @@ public class PlayerMove {
         if (InputManager.instance.upPressed) {
                 BoxCollider colliderBottom=player.boxCollider.shift(0,1);
                 if(GameObject.checkCollision(colliderBottom, Platform.class)!=null){
-//                    this.velocityGravity.y -=10;
                     this.velocity.y -=15;
                 }
         }
         moveHorizontal(player);
-
         moveVertical(player);
-
+       //player.position.addUp(velocity);
     }
 
         private void moveHorizontal(Player player) {
         BoxCollider nextBoxCollider=player.boxCollider.shift(this.velocity.x,0);
         Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
         if(platform!=null){
-//            System.out.println("aaaaaaaaaaaa");
             boolean moveContinue=true;
             float distance=Math.signum(velocity.x);
             while (moveContinue){
@@ -52,8 +49,12 @@ public class PlayerMove {
                 }
             }
             this.velocity.x=0;
-        }
+        }else{
             player.position.addUp(velocity.x,0);
+
+        }
+
+
     }
 
 
@@ -61,23 +62,22 @@ public class PlayerMove {
     public void moveVertical(Player player) {
         //Predict collider
         BoxCollider nextBoxCollider=player.boxCollider.shift(0,this.velocity.y);
-
         Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
-
         if(platform!=null){
             boolean moveContinue=true;
-            float distance=1;
+            float distance=Math.signum(velocity.y);
             while (moveContinue){
                 BoxCollider temp = player.boxCollider.shift(0,distance);
                 if(GameObject.checkCollision(temp,Platform.class)!=null){
                     moveContinue=false;
                 }else{
-                    distance+=1;;
-                    player.position.addUp(0,1);
+                    distance+=Math.signum(velocity.y);
+                    player.position.addUp(0,Math.signum(velocity.y));
                 }
             }
             this.velocity.y=0;
+        }else{
+            player.position.addUp(0,velocity.y);
         }
-        player.position.addUp(0,velocity.y);
     }
 }

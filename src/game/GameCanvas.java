@@ -16,9 +16,9 @@ public class GameCanvas extends JPanel {
     public GameCanvas(){
            GameObject.add(new Background(0,0));
            GameObject.add(new Player(100,545));
-           GameObject.add(new ZombieSpawner());
+          // GameObject.add(new ZombieSpawner());
            Platform ground=new Platform(0,630,2000,50,null);
-           Platform platform=new Platform(400,400,294,76,"images/background/platform_1.jpg");
+           Platform platform=new Platform(400,450,294,76,"images/background/platform_1.jpg");
            GameObject.add(platform);
            GameObject.add(ground);
            // Resize when have background

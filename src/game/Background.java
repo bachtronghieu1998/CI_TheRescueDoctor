@@ -13,4 +13,8 @@ public class Background extends GameObject {
         renderer =new ImageRenderer("images/background/Background.png");
     }
 
+    @Override
+    public void render(Graphics g) {
+        g.drawImage(this.renderer.img,0,0,null);
+    }
 }
