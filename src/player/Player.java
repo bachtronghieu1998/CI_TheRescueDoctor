@@ -6,6 +6,7 @@ import bases.BoxCollider;
 import bases.GameObject;
 import bases.Vector2D;
 import inputs.InputManager;
+import zombie.Zombie;
 
 import java.awt.*;
 
@@ -15,6 +16,7 @@ public class Player extends GameObject {
     PlayerShoot playerShoot;
     PlayerAnimator playerAnimator;
     public final float gravity=0.8f;
+    int count;
 
     boolean isDown;
     public Player(int x, int y) {
@@ -24,7 +26,7 @@ public class Player extends GameObject {
         playerAnimator = new PlayerAnimator();
         renderer = this.playerAnimator;
         boxCollider = new BoxCollider(x,y,60,111);
-
+        count = 3;
     }
 
     @Override
@@ -33,7 +35,7 @@ public class Player extends GameObject {
          move();
         shoot();
         animate();
-
+        getHit();
     }
 
     private void move() {
@@ -54,7 +56,13 @@ public class Player extends GameObject {
     }
 
     public void getHit() {
-        this.gameOver();
-
+        Zombie zombie = GameObject.checkCollision(this.boxCollider, Zombie.class);
+        if (zombie != null) {
+            count--;
+            this.position.addUp(-50,0);
+        }
+        if (count == 0) {
+            this.destroy();
+        }
     }
 }

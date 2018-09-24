@@ -51,7 +51,7 @@ public class PlayerMove {
             this.velocity.x=0;
         }else{
             player.position.addUp(velocity.x,0);
-
+            player.boxCollider.position.addUp(velocity.x,0);
         }
 
 
