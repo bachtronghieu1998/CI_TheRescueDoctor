@@ -1,10 +1,7 @@
 package player;
 
 import Platform.Platform;
-import bases.Animation;
-import bases.BoxCollider;
-import bases.GameObject;
-import bases.Vector2D;
+import bases.*;
 import inputs.InputManager;
 import zombie.Zombie;
 
@@ -17,8 +14,8 @@ public class Player extends GameObject {
     PlayerAnimator playerAnimator;
     public final float gravity=0.8f;
     int count;
+    BloodBar bloodBar;
 
-    boolean isDown;
     public Player(int x, int y) {
         super(x,y);
         playerMove = new PlayerMove();
@@ -27,11 +24,13 @@ public class Player extends GameObject {
         renderer = this.playerAnimator;
         boxCollider = new BoxCollider(x,y,60,111);
         count = 3;
+        bloodBar = new BloodBar();
     }
 
     @Override
     public void run() {
         super.run();
+        bloodBar.run(this);
          move();
         shoot();
         animate();
@@ -53,6 +52,7 @@ public class Player extends GameObject {
     @Override
     public void render(Graphics g) {
         super.render(g);
+        bloodBar.render(g);
     }
 
     public void getHit() {
@@ -60,6 +60,12 @@ public class Player extends GameObject {
         if (zombie != null) {
             count--;
             this.position.addUp(-50,0);
+        }
+        if (count == 2) {
+            bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar2.png");
+        }
+        if (count == 1) {
+            bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar3.png");
         }
         if (count == 0) {
             this.destroy();

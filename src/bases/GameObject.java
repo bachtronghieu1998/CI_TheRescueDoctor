@@ -58,7 +58,7 @@ public class GameObject {
         }
 
         if (this.boxCollider != null) {
-            this.boxCollider.render(g);
+//            this.boxCollider.render(g);
         }
     }
     public static void renderAll(Graphics backBufferGraphic) {

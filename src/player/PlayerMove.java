@@ -25,7 +25,7 @@ public class PlayerMove {
         if (InputManager.instance.upPressed) {
                 BoxCollider colliderBottom=player.boxCollider.shift(0,1);
                 if(GameObject.checkCollision(colliderBottom, Platform.class)!=null){
-                    this.velocity.y -=15;
+                    this.velocity.y -= 18;
                 }
         }
         moveHorizontal(player);
