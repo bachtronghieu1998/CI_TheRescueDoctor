@@ -49,10 +49,9 @@ public class PlayerMove {
                 }
             }
             this.velocity.x=0;
-        }else{
+        }
             player.position.addUp(velocity.x,0);
             player.boxCollider.position.addUp(velocity.x,0);
-        }
 
 
     }
@@ -76,8 +75,8 @@ public class PlayerMove {
                 }
             }
             this.velocity.y=0;
-        }else{
-            player.position.addUp(0,velocity.y);
         }
+            player.position.addUp(0,velocity.y);
+
     }
 }

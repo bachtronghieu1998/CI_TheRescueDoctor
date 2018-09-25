@@ -1,8 +1,6 @@
 package player;
 
-import Platform.Platform;
 import bases.*;
-import inputs.InputManager;
 import zombie.Zombie;
 
 import java.awt.*;
@@ -30,7 +28,6 @@ public class Player extends GameObject {
     @Override
     public void run() {
         super.run();
-        bloodBar.run(this);
          move();
         shoot();
         animate();
@@ -52,7 +49,7 @@ public class Player extends GameObject {
     @Override
     public void render(Graphics g) {
         super.render(g);
-        bloodBar.render(g);
+        bloodBar.render(g,position);
     }
 
     public void getHit() {
