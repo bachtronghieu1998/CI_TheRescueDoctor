@@ -1,6 +1,7 @@
 package player;
 
 import bases.*;
+import zombie.Zombie;
 
 import java.awt.*;
 
@@ -10,8 +11,9 @@ public class Player extends GameObject {
     PlayerShoot playerShoot;
     PlayerAnimator playerAnimator;
     public final float gravity=0.8f;
+    int count;
+    BloodBar bloodBar;
 
-    boolean isDown;
     public Player(int x, int y) {
         super(x,y);
         playerMove = new PlayerMove();
@@ -19,7 +21,8 @@ public class Player extends GameObject {
         playerAnimator = new PlayerAnimator();
         renderer = this.playerAnimator;
         boxCollider = new BoxCollider(x,y,60,111);
-
+        count = 3;
+        bloodBar = new BloodBar();
     }
 
     public Vector2D getPosition(){
@@ -32,7 +35,7 @@ public class Player extends GameObject {
          move();
         shoot();
         animate();
-
+        getHit();
     }
 
     private void move() {
@@ -50,10 +53,23 @@ public class Player extends GameObject {
     @Override
     public void render(Graphics g, ViewPort viewPort) {
         super.render(g, viewPort);
+        bloodBar.render(g,position);
     }
 
     public void getHit() {
-        this.gameOver();
-
+        Zombie zombie = GameObject.checkCollision(this.boxCollider,Zombie.class);
+        if (zombie != null) {
+            count--;
+            this.position.addUp(-100,0);
+        }
+        if (count == 2) {
+            bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar2.png");
+        }
+        if (count == 1) {
+            bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar3.png");
+        }
+        if (count == 0) {
+            this.destroy();
+        }
     }
 }

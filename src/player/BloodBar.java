@@ -1,9 +1,6 @@
 package player;
 
-import bases.GameObject;
-import bases.ImageRenderer;
-import bases.ImageUtil;
-import bases.Vector2D;
+import bases.*;
 
 import java.awt.*;
 
@@ -16,7 +13,7 @@ public class BloodBar {
         this.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar1.png");
     }
 
-    public void render(Graphics g, Vector2D position) {
-        g.drawImage(image,(int)position.x-30,(int)position.y-70,null);
+    public void render(Graphics g,Vector2D position) {
+        g.drawImage(image,(int)position.x - 100, (int)position.y - 70,null);
     }
 }
