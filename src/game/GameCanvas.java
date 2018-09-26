@@ -24,7 +24,7 @@ public class GameCanvas extends JPanel {
            viewPort=new ViewPort();
            viewPort.followOffset.x=-80/2;
           // viewPort.followOffset.y=-1100/2;
-         //  GameObject.add(new ZombieSpawner());
+           GameObject.add(new ZombieSpawner());
         // Resize when have background
             backBuffer=new BufferedImage(886,667,BufferedImage.TYPE_INT_ARGB );
         addPlatform();
