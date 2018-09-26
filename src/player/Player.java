@@ -36,6 +36,8 @@ public class Player extends GameObject {
         shoot();
         animate();
         getHit();
+        bloodBar.position.x=this.position.x;
+        bloodBar.position.y=this.position.y;
     }
 
     private void move() {
@@ -53,7 +55,7 @@ public class Player extends GameObject {
     @Override
     public void render(Graphics g, ViewPort viewPort) {
         super.render(g, viewPort);
-        bloodBar.render(g,position);
+        bloodBar.render(g,viewPort.translate(this.position));
     }
 
     public void getHit() {

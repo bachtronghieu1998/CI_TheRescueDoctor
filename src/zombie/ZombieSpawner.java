@@ -19,7 +19,7 @@ public class ZombieSpawner extends GameObject {
         super.run();
         if(frameCounter.expired){
             Random rd=new Random();
-            GameObject.generic(890,550,Zombie.class);
+            GameObject.generic(890,540,Zombie.class);
             //  GameObject.add(new Zombie(890,550));
             frameCounter.reset();
         }else{
