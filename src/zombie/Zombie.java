@@ -29,7 +29,7 @@ public class Zombie extends GameObject {
         super.run();
         zombieRun();
         detectiveIfNeeded();
-        hitPlayer();
+//        hitPlayer();
     }
 
     private void hitPlayer() {
