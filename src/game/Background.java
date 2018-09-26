@@ -2,7 +2,7 @@ package game;
 
 import bases.GameObject;
 import bases.ImageRenderer;
-import bases.ImageUtil;
+import bases.ViewPort;
 
 import java.awt.*;
 
@@ -14,7 +14,8 @@ public class Background extends GameObject {
     }
 
     @Override
-    public void render(Graphics g) {
+    public void render(Graphics g, ViewPort viewPort) {
+
         g.drawImage(this.renderer.img,0,0,null);
     }
 }

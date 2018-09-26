@@ -46,11 +46,13 @@ public class PlayerMove {
                 }else{
                     distance+=Math.signum(velocity.x);
                     player.position.addUp(Math.signum(velocity.x),0);
+                    player.boxCollider.position.addUp(Math.signum(velocity.x),0);
                 }
             }
             this.velocity.x=0;
         }else{
             player.position.addUp(velocity.x,0);
+            player.boxCollider.position.addUp(velocity.x,0);
 
         }
 

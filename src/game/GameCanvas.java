@@ -2,6 +2,8 @@ package game;
 
 import Platform.Platform;
 import bases.GameObject;
+import bases.ViewPort;
+import game.maps.Map;
 import player.Player;
 import zombie.ZombieSpawner;
 
@@ -13,19 +15,27 @@ public class GameCanvas extends JPanel {
 
     BufferedImage backBuffer;
     Graphics backBufferGraphic;
+    ViewPort viewPort;
+    Player player;
     public GameCanvas(){
            GameObject.add(new Background(0,0));
-           GameObject.add(new Player(100,545));
-          // GameObject.add(new ZombieSpawner());
-           Platform ground=new Platform(0,630,2000,50,null);
-           Platform platform=new Platform(400,450,294,76,"images/background/platform_1.jpg");
-           GameObject.add(platform);
-           GameObject.add(ground);
-           // Resize when have background
+           player=new Player(100,300);
+           GameObject.add(player);
+           viewPort=new ViewPort();
+           viewPort.followOffset.x=-80/2;
+          // viewPort.followOffset.y=-1100/2;
+         //  GameObject.add(new ZombieSpawner());
+        // Resize when have background
             backBuffer=new BufferedImage(886,667,BufferedImage.TYPE_INT_ARGB );
-            backBufferGraphic=backBuffer.getGraphics();
+        addPlatform();
+
+        backBufferGraphic=backBuffer.getGraphics();
     }
 
+    public void addPlatform(){
+        Map map= Map.load("images/background/platform/platform_Temp.json");
+        map.generate();
+    }
     @Override
     protected void paintComponent(Graphics g) {
         g.drawImage(backBuffer,0,0,null);
@@ -33,10 +43,13 @@ public class GameCanvas extends JPanel {
 
     public void run(){
         GameObject.runAll();
+        viewPort.follow(player);
     }
 
     public void render(){
-        GameObject.renderAll(backBufferGraphic);
+
+     Graphics2D g2d=  (Graphics2D) backBufferGraphic;
+        GameObject.renderAll(backBufferGraphic,viewPort);
         this.repaint();
     }
 }

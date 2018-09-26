@@ -17,7 +17,7 @@ public class PlayerBullet extends GameObject {
     @Override
     public void run() {
         super.run();
-        deactivateIfNeeded();
+       // deactivateIfNeeded();
         move();
         hitZombies();
     }

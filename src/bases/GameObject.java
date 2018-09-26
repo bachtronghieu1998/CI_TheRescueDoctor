@@ -1,8 +1,5 @@
 package bases;
 
-import player.Player;
-import zombie.Zombie;
-
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -11,7 +8,7 @@ public class GameObject {
    public Vector2D position;
     public Renderer renderer;
      public BoxCollider boxCollider;
-     static private ArrayList<GameObject> gameObjects=new ArrayList<>();
+     static public ArrayList<GameObject> gameObjects=new ArrayList<>();
      private static ArrayList<GameObject> newGameObjects=new ArrayList<>();
      public boolean isActive;
     public boolean isAlive;
@@ -49,22 +46,21 @@ public class GameObject {
         }
         gameObjects.addAll(newGameObjects);
         newGameObjects.clear();
-        System.out.println(gameObjects.size());
     }
 
-    public void render(Graphics g){
+    public void render(Graphics g, ViewPort viewPort){
         if(this.renderer != null){
-            this.renderer.render(g,position);
+            this.renderer.render(g,viewPort.translate(this.position));
         }
 
         if (this.boxCollider != null) {
-            this.boxCollider.render(g);
+            this.boxCollider.render(g, viewPort);
         }
     }
-    public static void renderAll(Graphics backBufferGraphic) {
+    public static void renderAll(Graphics backBufferGraphic,ViewPort viewPort) {
         for(GameObject go: gameObjects){
             if(go.isActive){
-                go.render(backBufferGraphic);
+                go.render(backBufferGraphic,viewPort);
             }
         }
     }

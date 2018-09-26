@@ -1,11 +1,6 @@
 package player;
 
-import Platform.Platform;
-import bases.Animation;
-import bases.BoxCollider;
-import bases.GameObject;
-import bases.Vector2D;
-import inputs.InputManager;
+import bases.*;
 
 import java.awt.*;
 
@@ -25,6 +20,10 @@ public class Player extends GameObject {
         renderer = this.playerAnimator;
         boxCollider = new BoxCollider(x,y,60,111);
 
+    }
+
+    public Vector2D getPosition(){
+        return this.position;
     }
 
     @Override
@@ -49,8 +48,8 @@ public class Player extends GameObject {
     }
 
     @Override
-    public void render(Graphics g) {
-        super.render(g);
+    public void render(Graphics g, ViewPort viewPort) {
+        super.render(g, viewPort);
     }
 
     public void getHit() {

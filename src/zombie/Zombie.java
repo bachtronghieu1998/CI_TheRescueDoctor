@@ -54,8 +54,8 @@ public class Zombie extends GameObject {
 
 
     @Override
-    public void render(Graphics g) {
-        super.render(g);
+    public void render(Graphics g, ViewPort viewPort) {
+        super.render(g, viewPort);
     }
 
     public void getHit() {
