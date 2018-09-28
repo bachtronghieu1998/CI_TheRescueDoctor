@@ -2,7 +2,7 @@ package game.maps;
 
 import Platform.Platform;
 import bases.GameObject;
-
+import Platform.Water;
 import java.util.List;
 
 public class Layer {
@@ -23,10 +23,13 @@ public class Layer {
         for(int tittleY=0;tittleY<height;tittleY++){
             for(int tittleX=0;tittleX<width;tittleX++){
                 int mapData=data.get(tittleY*width+tittleX);
-                if(mapData!=0){
+                if(mapData!=3 && mapData!=0){
                      Platform platform=new Platform(tittleX*32,tittleY*32,32,32);
                      platform.addImg(mapData);
                     GameObject.add(platform);
+               } else if(mapData==3 ){
+                    Water water=new Water(tittleX*32,tittleY*32,32,32);
+                    GameObject.add(water);
                 }
             }
         }

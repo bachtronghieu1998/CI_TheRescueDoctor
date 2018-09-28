@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class BloodBar {
     Vector2D position;
-  Image image;
+ public Image image;
 
     public BloodBar() {
         position = new Vector2D();

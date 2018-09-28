@@ -3,7 +3,7 @@ package player;
 import Platform.Platform;
 import bases.*;
 import zombie.Zombie;
-
+import Platform.Water;
 import java.awt.*;
 
 public class Player extends GameObject {
@@ -12,8 +12,8 @@ public class Player extends GameObject {
     public PlayerShoot playerShoot;
     PlayerAnimator playerAnimator;
     public final float gravity=0.8f;
-    int count;
-    BloodBar bloodBar;
+    public int count;
+   public BloodBar bloodBar;
 
     public Player(int x, int y) {
         super(x,y);
@@ -37,10 +37,19 @@ public class Player extends GameObject {
         shoot();
         animate();
         getHit();
+        dropWater();
         bloodBar.position.x=this.position.x;
         bloodBar.position.y=this.position.y;
     }
 
+
+    public void dropWater(){
+        Water water = GameObject.checkCollision(this.boxCollider, Water.class);
+        if(water!=null){
+            System.exit(0);
+
+        }
+    }
     private void move() {
         playerMove.run(this);
     }
@@ -78,8 +87,6 @@ public class Player extends GameObject {
                }
 
            }
-
-
 //            this.position.addUp(0,-800);
         }
         if (count == 2) {
@@ -91,5 +98,9 @@ public class Player extends GameObject {
         if (count == 0) {
             this.destroy();
         }
+    }
+
+    public void Destroy(){
+        this.destroy();
     }
 }

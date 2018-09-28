@@ -3,6 +3,7 @@ package bases;
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GameObject {
    public Vector2D position;
@@ -10,6 +11,9 @@ public class GameObject {
      public BoxCollider boxCollider;
      static public ArrayList<GameObject> gameObjects=new ArrayList<>();
      private static ArrayList<GameObject> newGameObjects=new ArrayList<>();
+
+     public static ArrayList<Vector2D> zombPosition=new ArrayList<>();
+    public static ArrayList<Vector2D> plantPostion=new ArrayList<>();
      public boolean isActive;
     public boolean isAlive;
 
@@ -53,9 +57,10 @@ public class GameObject {
             this.renderer.render(g,viewPort.translate(this.position));
         }
 
-        if (this.boxCollider != null) {
-            this.boxCollider.render(g, viewPort);
-        }
+//        if (this.boxCollider != null) {
+////            this.boxCollider.render(g, viewPort);
+//            this.boxCollider.render(g);
+//        }
     }
     public static void renderAll(Graphics backBufferGraphic,ViewPort viewPort) {
         for(GameObject go: gameObjects){

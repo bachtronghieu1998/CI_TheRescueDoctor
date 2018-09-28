@@ -8,13 +8,17 @@ public class BulletExplosion extends GameObject {
 
     public BulletExplosion(int x, int y) {
         super(x,y);
-        this.renderer = new Animation(3,true, ImageUtil.LoadImage("images/bullets/bulletex1.png"),
-                ImageUtil.LoadImage("images/bullets/bulletex2.png"),
-                ImageUtil.LoadImage("images/bullets/bulletex3.png"),
-                ImageUtil.LoadImage("images/bullets/bulletex4.png"),
-                ImageUtil.LoadImage("images/bullets/bulletex5.png"),
-                ImageUtil.LoadImage("images/bullets/bulletex6.png"),
-                ImageUtil.LoadImage("images/bullets/bulletex7.png"));
+        this.renderer = new Animation(3,true,
+
+                ImageUtil.LoadImage("images/human/human.png"),
+                ImageUtil.LoadImage("images/human/human1.png"),
+                ImageUtil.LoadImage("images/human/human2.png"),
+                ImageUtil.LoadImage("images/human/human3.png"),
+                ImageUtil.LoadImage("images/human/human4.png"),
+                ImageUtil.LoadImage("images/human/human5.png"),
+                ImageUtil.LoadImage("images/human/human6.png"),
+                ImageUtil.LoadImage("images/human/human7.png"),
+                ImageUtil.LoadImage("images/human/human8.png"));
     }
 
     @Override

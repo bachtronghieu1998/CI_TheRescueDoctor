@@ -33,10 +33,10 @@ public class Platform extends GameObject
                 this.renderer=new ImageRenderer("images/background/platform/platform1.jpg");
                 break;
             }
-            case 3: {
-                this.renderer=new ImageRenderer("images/background/platform/water.jpg");
-                break;
-            }
+//            case 3: {
+//                this.renderer=new ImageRenderer("images/background/platform/water.jpg");
+//                break;
+//            }
             case 4: {
                 this.renderer=new ImageRenderer("images/background/platform/underWater.jpg");
                 break;
