@@ -1,6 +1,5 @@
 package game;
 
-import Platform.Platform;
 import bases.GameObject;
 import bases.ViewPort;
 import game.maps.Map;

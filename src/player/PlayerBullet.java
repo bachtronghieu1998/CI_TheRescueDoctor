@@ -1,32 +1,39 @@
 package player;
 
+import bases.Animation;
 import bases.BoxCollider;
 import bases.GameObject;
-import bases.ImageRenderer;
-import inputs.InputManager;
+import bases.ImageUtil;
 import zombie.Zombie;
 
 public class PlayerBullet extends GameObject {
 
     public PlayerBullet(int x, int y) {
         super(x,y);
-        renderer = new ImageRenderer("images/bullets/bullet.png");
+        renderer = new Animation(ImageUtil.LoadImage("images/bullets/bullet2.png"),
+                ImageUtil.LoadImage("images/bullets/bullet1.png"),
+                ImageUtil.LoadImage("images/bullets/bullet3.png"));
         this.boxCollider = new BoxCollider(x,y,10,10);
     }
 
     @Override
     public void run() {
         super.run();
-       // deactivateIfNeeded();
+//        deactivateIfNeeded();
         move();
         hitZombies();
     }
 
     private void hitZombies() {
-        Zombie zombie = GameObject.checkCollision(this.boxCollider,Zombie.class);
+        Zombie zombie = GameObject.checkCollision(this.boxCollider, Zombie.class);
         if (zombie!=null){
             zombie.getHit();
             this.isActive=false;
+            BulletExplosion bulletExplosion = new BulletExplosion(
+                    (int)position.x,
+                    (int)position.y
+            );
+            GameObject.add(bulletExplosion);
         }
     }
 

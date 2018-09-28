@@ -9,7 +9,7 @@ import java.awt.*;
 public class Player extends GameObject {
 
     PlayerMove playerMove;
-    PlayerShoot playerShoot;
+    public PlayerShoot playerShoot;
     PlayerAnimator playerAnimator;
     public final float gravity=0.8f;
     int count;
@@ -60,7 +60,7 @@ public class Player extends GameObject {
     }
 
     public void getHit() {
-        Zombie zombie = GameObject.checkCollision(this.boxCollider,Zombie.class);
+        Zombie zombie = GameObject.checkCollision(this.boxCollider, Zombie.class);
         if (zombie != null) {
             count--;
            zombie.position.x+=20;
@@ -69,7 +69,7 @@ public class Player extends GameObject {
            int distance=-1;
            while(moveContinue){
                BoxCollider temp=this.boxCollider.shift(distance,0);
-               if(GameObject.checkCollision(temp,Platform.class)!=null){
+               if(GameObject.checkCollision(temp, Platform.class)!=null){
                    moveContinue=false;
                }else{
                    distance-=1;

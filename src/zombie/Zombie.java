@@ -1,7 +1,6 @@
 package zombie;
 
 import bases.*;
-import player.PBAnimation;
 import player.Player;
 
 import java.awt.*;
@@ -34,7 +33,7 @@ public class Zombie extends GameObject {
     }
 
     private void hitPlayer() {
-        Player player = GameObject.checkCollision(this.boxCollider,Player.class);
+        Player player = GameObject.checkCollision(this.boxCollider, Player.class);
             if (player!=null){
                 System.out.println("Game over");
                 player.getHit();
@@ -60,17 +59,11 @@ public class Zombie extends GameObject {
     }
 
     public void getHit() {
-        ZombieAnimation zombieAnimation= new ZombieAnimation(
-                (int)this.position.x,
-                (int)this.position.y
+        ZombieExplosion zombieExplosion = new ZombieExplosion(
+                (int)position.x,
+                (int)position.y
         );
-        GameObject.add(zombieAnimation);
-
-        PBAnimation pbAnimation = new PBAnimation(
-                (int)this.position.x,
-                (int)this.position.y
-        );
-        GameObject.add(pbAnimation);
+        GameObject.add(zombieExplosion);
         this.destroy();
     }
 }
