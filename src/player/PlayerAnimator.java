@@ -13,27 +13,27 @@ public class PlayerAnimator extends Renderer {
     public static Animation straightlAnimation;
 
     public PlayerAnimator() {
-        rightAnimation = new Animation(10,false,
+        rightAnimation = new Animation(5,false,
                 ImageUtil.LoadImage("images/player/player-right1.png"),
                 ImageUtil.LoadImage("images/player/player-right2.png"),
                 ImageUtil.LoadImage("images/player/player-right3.png"),
                 ImageUtil.LoadImage("images/player/player-right4.png"),
                 ImageUtil.LoadImage("images/player/player-right5.png"));
 
-        leftAnimation = new Animation(10,false,
+        leftAnimation = new Animation(5,false,
                 ImageUtil.LoadImage("images/player/player-left1.png"),
                 ImageUtil.LoadImage("images/player/player-left2.png"),
                 ImageUtil.LoadImage("images/player/player-left3.png"),
                 ImageUtil.LoadImage("images/player/player-left4.png"),
                 ImageUtil.LoadImage("images/player/player-left5.png"));
 
-        straightAnimation = new Animation(10,false,
+        straightAnimation = new Animation(5,false,
                 ImageUtil.LoadImage("images/player/player.png"),
                 ImageUtil.LoadImage("images/player/player1.png"),
                 ImageUtil.LoadImage("images/player/player2.png"),
                 ImageUtil.LoadImage("images/player/player3.png"),
                 ImageUtil.LoadImage("images/player/player4.png"));
-        straightlAnimation = new Animation(10,false,
+        straightlAnimation = new Animation(5,false,
                 ImageUtil.LoadImage("images/player/playerl.png"),
                 ImageUtil.LoadImage("images/player/playerl1.png"),
                 ImageUtil.LoadImage("images/player/playerl2.png"),

@@ -18,6 +18,7 @@ public class GameCanvas extends JPanel {
     ViewPort viewPort;
     Player player;
     public GameCanvas(){
+
            GameObject.add(new Background(0,0));
            player=new Player(100,300);
            GameObject.add(player);

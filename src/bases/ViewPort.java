@@ -9,7 +9,7 @@ public class ViewPort extends Renderer {
     }
 
     public void follow(GameObject object){
-        position.x=object.position.x+followOffset.x;
+        position.x=object.position.x+followOffset.x-200;
     }
 
     public Vector2D translate(Vector2D pos){

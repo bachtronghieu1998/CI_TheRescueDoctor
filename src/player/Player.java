@@ -1,5 +1,6 @@
 package player;
 
+import Platform.Platform;
 import bases.*;
 import zombie.Zombie;
 
@@ -62,7 +63,24 @@ public class Player extends GameObject {
         Zombie zombie = GameObject.checkCollision(this.boxCollider,Zombie.class);
         if (zombie != null) {
             count--;
-            this.position.addUp(-100,0);
+           zombie.position.x+=20;
+
+           boolean moveContinue=true;
+           int distance=-1;
+           while(moveContinue){
+               BoxCollider temp=this.boxCollider.shift(distance,0);
+               if(GameObject.checkCollision(temp,Platform.class)!=null){
+                   moveContinue=false;
+               }else{
+                   distance-=1;
+                   this.position.addUp(distance,0);
+                   this.boxCollider.position.addUp(distance,0);
+               }
+
+           }
+
+
+//            this.position.addUp(0,-800);
         }
         if (count == 2) {
             bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar2.png");
