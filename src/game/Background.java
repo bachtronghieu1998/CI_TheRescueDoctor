@@ -18,4 +18,8 @@ public class Background extends GameObject {
 
         g.drawImage(this.renderer.img,0,0,null);
     }
+
+    public void render(Graphics g){
+        g.drawImage(this.renderer.img,0,0,null);
+    }
 }

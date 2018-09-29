@@ -4,12 +4,18 @@ import bases.GameObject;
 import bases.ImageUtil;
 import bases.Vector2D;
 import bases.ViewPort;
+import bases.scenes.SceneManager;
 import game.maps.Map;
+import inputs.InputManager;
 import plant.Plant;
 import plant.PlantBullet;
 import plant.PlantSpawner;
 import player.Player;
 import player.PlayerBullet;
+import scenes.GameOverScene;
+import scenes.GamePlayScene;
+import scenes.OpeningScene;
+import sun.awt.im.InputMethodManager;
 import zombie.ZombieSpawner;
 
 import javax.swing.*;
@@ -21,70 +27,16 @@ public class GameCanvas extends JPanel {
 
     BufferedImage backBuffer;
     Graphics backBufferGraphic;
-    ViewPort viewPort;
-    Player player;
     public GameCanvas(){
-           GameObject.add(new Background(0,0));
-           player=new Player(100,300);
-           GameObject.add(player);
-           viewPort=new ViewPort();
-           viewPort.followOffset.x=-80/2;
-          // viewPort.followOffset.y=-1100/2;
-           GameObject.add(new ZombieSpawner());
-        GameObject.add(new PlantSpawner());
 
-        // Resize when have background
+          // viewPort.followOffset.y=-1100/2;
+
+           SceneManager.changeScene(new OpeningScene());
             backBuffer=new BufferedImage(886,667,BufferedImage.TYPE_INT_ARGB );
-        addPlatform();
-       addZombie();
-       addPlant();
+
         backBufferGraphic=backBuffer.getGraphics();
     }
-    public void addPlant(){
-        GameObject.plantPostion.add(new Vector2D(864,370));
-        GameObject.plantPostion.add(new Vector2D(2304,416-50));
 
-        GameObject.plantPostion.add(new Vector2D(3712,416-50));
-        GameObject.plantPostion.add(new Vector2D(5344,512-50));
-        GameObject.plantPostion.add(new Vector2D(5728,11*32-50));
-        GameObject.plantPostion.add(new Vector2D(201*32,9*32-50));
-        GameObject.plantPostion.add(new Vector2D(217*32,11*32-50));
-        GameObject.plantPostion.add(new Vector2D(238*32,16*32-50));
-        GameObject.plantPostion.add(new Vector2D(254*32,13*32-50));
-        GameObject.plantPostion.add(new Vector2D(278*32,14*32-50));
-        GameObject.plantPostion.add(new Vector2D(279*32,6*32-50));
-        GameObject.plantPostion.add(new Vector2D(329*32,13*32-50));
-        GameObject.plantPostion.add(new Vector2D(338*32,12*32-50));
-        GameObject.plantPostion.add(new Vector2D(358*32,11*32-50));
-//
-
-    }
-    public void addZombie(){
-        GameObject.zombPosition.add(new Vector2D(320,540));
-
-        GameObject.zombPosition.add(new Vector2D(1600,540));
-        GameObject.zombPosition.add(new Vector2D(4128,540));
-        //
-        GameObject.zombPosition.add(new Vector2D(6464,540));
-        GameObject.zombPosition.add(new Vector2D(7296,540));
-        GameObject.zombPosition.add(new Vector2D(6304,540));
-        GameObject.zombPosition.add(new Vector2D(7200,540));
-        //
-        GameObject.zombPosition.add(new Vector2D(8448,540));
-        GameObject.zombPosition.add(new Vector2D(8672,540));
-        //GameObject.zombPosition.add(new Vector2D(8352,540));
-        //
-        GameObject.zombPosition.add(new Vector2D(9312,540));
-        GameObject.zombPosition.add(new Vector2D(9952,540));
-        GameObject.zombPosition.add(new Vector2D(9088,540));
-        GameObject.zombPosition.add(new Vector2D(9222,540));
-
-    }
-
-    public void addPlatform(){
-        Map map= Map.load("images/background/platform/platform_Temp.json");
-        map.generate();
-    }
     @Override
     protected void paintComponent(Graphics g) {
         g.drawImage(backBuffer,0,0,null);
@@ -92,19 +44,73 @@ public class GameCanvas extends JPanel {
 
     public void run(){
         GameObject.runAll();
-        viewPort.follow(player);
+        SceneManager.changeSceneIfNeeded();
+        if(SceneManager.currentScene instanceof  GamePlayScene){
+            GamePlayScene gamePlayScene= (GamePlayScene) SceneManager.currentScene;
+            gamePlayScene.viewPort.follow(gamePlayScene.player);
+        }
     }
 
     public void render(){
-
+    // backBufferGraphic.setColor(Color.black);
+    // backBufferGraphic.fillRect(0,0,886,666);
      Graphics2D g2d=  (Graphics2D) backBufferGraphic;
-        GameObject.renderAll(backBufferGraphic,viewPort);
-        g2d.drawImage(ImageUtil.LoadImage("images/bullets/bullet1.png"), 10, 10,null);
-        g2d.drawString(Integer.toString(player.playerShoot.count),50,40);
-        g2d.drawImage(ImageUtil.LoadImage("images/zombie/icon/zomIcon.png"), 100, 20,null);
-        g2d.drawString(Integer.toString(PlayerBullet.count),140,40);
-        g2d.drawImage(ImageUtil.LoadImage("images/plant/icon/Plant bite anim1.png"), 170, 15,null);
-        g2d.drawString(Integer.toString(Plant.count),200,40);
+     if(SceneManager.currentScene instanceof  GamePlayScene){
+        GamePlayScene gamePlayScene= (GamePlayScene) SceneManager.currentScene;
+         GameObject.renderAll(backBufferGraphic,gamePlayScene.viewPort);
+         Font myFont = new Font ("Courier New", 1, 20);
+         g2d.setFont(myFont);
+         g2d.drawImage(ImageUtil.LoadImage("images/bullets/bullet1.png"), 10, 10,null);
+         g2d.drawString(Integer.toString(gamePlayScene.player.playerShoot.count),50,40);
+         g2d.drawImage(ImageUtil.LoadImage("images/zombie/icon/zomIcon.png"), 100, 20,null);
+         g2d.drawString(Integer.toString(PlayerBullet.count),140,40);
+         g2d.drawImage(ImageUtil.LoadImage("images/plant/icon/Plant bite anim1.png"), 170, 15,null);
+         g2d.drawString(Integer.toString(Plant.count),200,40);
+     }else if(SceneManager.currentScene instanceof GameOverScene){
+         Background background=new Background(0,0);
+         background.render(backBufferGraphic);
+         Font myFont = new Font ("Courier New", 1, 40);
+         g2d.setFont(myFont);
+         g2d.drawString("G a m e    O v e r",886/2-200,150);
+         g2d.drawString("------------------------",886/2-280,180);
+          myFont = new Font ("Courier New", 1, 40);
+         g2d.setFont(myFont);
+         g2d.drawImage(ImageUtil.LoadImage("images/bullets/bullet1.png"), 10, 5,null);
+         g2d.drawString(Integer.toString(Player.playerShoot.count),50,40);
+         g2d.drawImage(ImageUtil.LoadImage("images/zombie/icon/zomIcon.png"), 150, 15,null);
+         g2d.drawString(Integer.toString(PlayerBullet.count),190,40);
+         g2d.drawImage(ImageUtil.LoadImage("images/plant/icon/Plant bite anim1.png"), 250, 10,null);
+         g2d.drawString(Integer.toString(Plant.count),290,40);
+         myFont = new Font ("Courier New", 1, 20);
+         g2d.setFont(myFont);
+         g2d.drawString("Press Enter to start again",886/2-200,500);
+         if(InputManager.instance.startAgain){
+             SceneManager.changeScene(new GamePlayScene());
+         }
+     }else if(SceneManager.currentScene instanceof OpeningScene){
+         Background background=new Background(0,0);
+         background.render(backBufferGraphic);
+         Font myFont = new Font ("Courier New", 1, 40);
+         g2d.setFont(myFont);
+         g2d.drawString("The Rescue Doctor",886/2-200,150);
+          myFont = new Font ("Courier New", 1, 20);
+         g2d.setFont(myFont);
+         g2d.drawString("-- Press Enter to start the game --",886/2-200,250);
+         g2d.drawString("Caution: Doctor hates WATER and FIRE",886/2-180,300);
+         g2d.drawImage(ImageUtil.LoadImage("images/player/player-right5.png"),80,490,null);
+         g2d.drawImage(ImageUtil.LoadImage("images/arrows/PixelArt.png"),170,520,null);
+         g2d.drawImage(ImageUtil.LoadImage("images/player/player-left5.png"),230,490,null);
+         g2d.drawImage(ImageUtil.LoadImage("images/arrows/PixelArt (2).png"),320,520,null);
+         g2d.drawImage(ImageUtil.LoadImage("images/player/player-right5.png"),400,490,null);
+         g2d.drawImage(ImageUtil.LoadImage("images/arrows/PixelArt (1).png"),480,520,null);
+         g2d.drawImage(ImageUtil.LoadImage("images/player/player-right5.png"),550,430,null);
+         g2d.drawImage(ImageUtil.LoadImage("images/arrows/xKey.png"),630,520,null);
+         g2d.drawImage(ImageUtil.LoadImage("images/player/player-right5.png"),690,490,null);
+         g2d.drawImage(ImageUtil.LoadImage("images/bullets/bullet1.png"),780,520,null);
+         if(InputManager.instance.startAgain){
+             SceneManager.changeScene(new GamePlayScene());
+         }
+     }
         this.repaint();
     }
 }

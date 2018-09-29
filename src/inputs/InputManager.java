@@ -8,7 +8,7 @@ public class InputManager {
     public boolean upPressed = false;
     public boolean downPressed = false;
     public boolean xPressed = false;
-
+     public boolean startAgain= false;
     public static InputManager instance = new InputManager();
 
     public void keyPressed(KeyEvent e) {
@@ -27,6 +27,9 @@ public class InputManager {
         else if (e.getKeyCode() == KeyEvent.VK_X) {
             xPressed = true;
         }
+        if(e.getKeyCode()==KeyEvent.VK_ENTER){
+            startAgain=true;
+        }
     }
 
     public void keyReleased(KeyEvent e) {
@@ -44,6 +47,9 @@ public class InputManager {
         }
         else if (e.getKeyCode() == KeyEvent.VK_X) {
             xPressed = false;
+        }
+        if(e.getKeyCode()==KeyEvent.VK_ENTER){
+            startAgain=false;
         }
     }
 }

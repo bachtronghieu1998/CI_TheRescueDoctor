@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class PlantBullet extends GameObject {
 
-
+  int count =0;
     public PlantBullet(int x, int y) {
         super(x, y);
         this.renderer=new Animation(5,false,
@@ -32,20 +32,33 @@ public class PlantBullet extends GameObject {
 
     void hitPlayer(){
         Player player= GameObject.checkCollision(this.boxCollider,Player.class);
-        if(player!=null){
-            player.count--;
-            if (player.count == 2) {
-                player.bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar2.png");
+        boolean check=true;
+        if(count<1){
+            if(player!=null){
+                count++;
+                this.isActive=false;
+                if(check){
+                    player.count--;
+                    check=false;
+                }
+                player.position.addUp(0,3);
+                if (player.count == 2) {
+                    System.out.println("Knock");
+                    player.bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar2.png");
+                }else  if (player.count == 1){
+                    player.bloodBar.image= ImageUtil.LoadImage("images/player/bloodbar/bloodbar3.png");
+
+                }
+
+                if (player.count == 0) {
+                    player.Destroy();
+                }
+
             }
-            if (player.count == 1) {
-                player.bloodBar.image= ImageUtil.LoadImage("images/player/bloodbar/bloodbar3.png");
-            }
-            if (player.count == 0) {
-                player.Destroy();
-            }
-            this.isActive=false;
+        }else{
+            count=0;
         }
-        System.out.println("-----------------");
+
     }
 
     @Override

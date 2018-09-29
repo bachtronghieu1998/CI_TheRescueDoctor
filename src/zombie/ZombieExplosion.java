@@ -8,7 +8,7 @@ public class ZombieExplosion extends GameObject {
 
     public ZombieExplosion(int x, int y) {
         super(x,y);
-        this.renderer = new Animation(10,true, ImageUtil.LoadImage("images/human/human.png"),
+        this.renderer = new Animation(15,true, ImageUtil.LoadImage("images/human/human.png"),
                 ImageUtil.LoadImage("images/human/human1.png"),
                 ImageUtil.LoadImage("images/human/human2.png"),
                 ImageUtil.LoadImage("images/human/human3.png"),

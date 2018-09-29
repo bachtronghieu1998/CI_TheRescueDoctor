@@ -11,7 +11,6 @@ public class GameObject {
      public BoxCollider boxCollider;
      static public ArrayList<GameObject> gameObjects=new ArrayList<>();
      private static ArrayList<GameObject> newGameObjects=new ArrayList<>();
-
      public static ArrayList<Vector2D> zombPosition=new ArrayList<>();
     public static ArrayList<Vector2D> plantPostion=new ArrayList<>();
      public boolean isActive;
@@ -32,6 +31,13 @@ public class GameObject {
 
     public GameObject() {
         this(0,0);
+    }
+
+    public static void clearAll() {
+        gameObjects.clear();
+        newGameObjects.clear();
+        zombPosition.clear();
+        plantPostion.clear();
     }
 
     public void run(){
