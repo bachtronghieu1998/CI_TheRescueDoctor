@@ -1,5 +1,6 @@
 package bases;
 
+import bases.scenes.SceneManager;
 import player.Player;
 
 import java.awt.*;
@@ -42,6 +43,7 @@ public class GameObject {
         newGameObjects.clear();
         zombPosition.clear();
         plantPostion.clear();
+        SceneManager.mediaPlayer.dispose();
     }
 
     public void run(){

@@ -3,6 +3,8 @@ package zombie;
 import bases.Animation;
 import bases.GameObject;
 import bases.ImageUtil;
+import bases.scenes.SceneManager;
+import tklibs.AudioUtils;
 
 public class ZombieExplosion extends GameObject {
 

@@ -1,5 +1,8 @@
 package inputs;
 
+import bases.scenes.SceneManager;
+import tklibs.AudioUtils;
+
 import java.awt.event.KeyEvent;
 
 public class InputManager {
@@ -10,6 +13,8 @@ public class InputManager {
     public boolean xPressed = false;
      public boolean startAgain= false;
     public static InputManager instance = new InputManager();
+
+
 
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
@@ -25,6 +30,7 @@ public class InputManager {
             downPressed = true;
         }
         else if (e.getKeyCode() == KeyEvent.VK_X) {
+            SceneManager.mediaPlayer = AudioUtils.playMedia("Sound/162461__kastenfrosch__bordtransmitter.mp3");
             xPressed = true;
         }
         if(e.getKeyCode()==KeyEvent.VK_ENTER){

@@ -8,6 +8,7 @@ import buff.AddBullet;
 import plant.Plant;
 import plant.PlantExplosion;
 import scenes.GameOverScene;
+import tklibs.AudioUtils;
 import zombie.Zombie;
 import Platform.Water;
 import java.awt.*;
@@ -131,6 +132,7 @@ public class Player extends GameObject {
     private void eatBullet() {
         AddBullet addBullet = GameObject.checkCollision(this.boxCollider, AddBullet.class);
         if (addBullet != null) {
+            SceneManager.mediaPlayer = AudioUtils.playMedia("Sound/162467__kastenfrosch__gotitem (1).mp3");
             addBullet.isActive = false;
             playerShoot.count += random.nextInt(6);
         }
@@ -181,6 +183,7 @@ public class Player extends GameObject {
     private void eatBlood() {
         AddBlood addBlood = GameObject.checkCollision(this.boxCollider,AddBlood.class);
         if (addBlood != null) {
+            SceneManager.mediaPlayer = AudioUtils.playMedia("Sound/162467__kastenfrosch__gotitem (1).mp3");
             addBlood.isActive = false;
             if (this.countLive == 3) {
                 this.countLive += 0;

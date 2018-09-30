@@ -5,6 +5,8 @@ import bases.Animation;
 import bases.BoxCollider;
 import bases.GameObject;
 import bases.ImageUtil;
+import bases.scenes.SceneManager;
+import tklibs.AudioUtils;
 import zombie.Zombie;
 
 public class PlayerBullet extends GameObject {
@@ -29,6 +31,7 @@ public class PlayerBullet extends GameObject {
     private void hitZombies() {
         Zombie zombie = GameObject.checkCollision(this.boxCollider, Zombie.class);
         if (zombie!=null){
+            SceneManager.mediaPlayer = AudioUtils.playMedia("Sound/162464__kastenfrosch__message.mp3");
             zombie.getHit();
             this.isActive=false;
             Player.countZom++;
