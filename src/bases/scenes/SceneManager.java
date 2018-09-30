@@ -1,8 +1,11 @@
 package bases.scenes;
 
+import javafx.scene.media.MediaPlayer;
+
 public class SceneManager {
     static public Scene currentScene;
     static Scene nextScene;
+    public static MediaPlayer mediaPlayer;
     public static void changeScene(Scene newScene){
         nextScene=newScene;
 
