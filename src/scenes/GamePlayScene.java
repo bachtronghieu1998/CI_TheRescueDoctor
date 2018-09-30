@@ -4,6 +4,8 @@ import bases.GameObject;
 import bases.Vector2D;
 import bases.ViewPort;
 import bases.scenes.Scene;
+import buff.AddBloodSpawner;
+import buff.AddBulletSpawner;
 import game.Background;
 import game.maps.Map;
 import plant.PlantSpawner;
@@ -36,11 +38,27 @@ public class GamePlayScene implements Scene {
         GameObject.add(player);
         GameObject.add(new ZombieSpawner());
         GameObject.add(new PlantSpawner());
+        GameObject.add(new AddBloodSpawner());
+        GameObject.add(new AddBulletSpawner());
         addPlatform();
         addZombie();
         addPlant();
+        addBlood();
+        addBullet();
     }
 
+    private void addBlood() {
+        GameObject.addBloodPostion.add(new Vector2D(120*32,18*32));
+        GameObject.addBloodPostion.add(new Vector2D(92*32,10*32));
+        GameObject.addBloodPostion.add(new Vector2D(178*32,17*32));
+    }
+
+    private void addBullet() {
+        GameObject.addBulletPostion.add(new Vector2D(35*32,11*32));
+        GameObject.addBulletPostion.add(new Vector2D(48*32,18*32));
+        GameObject.addBulletPostion.add(new Vector2D(70*32,18*32));
+        GameObject.addBulletPostion.add(new Vector2D(280*32,13*32));
+    }
     public void addPlant(){
         GameObject.plantPostion.add(new Vector2D(864,370));
         GameObject.plantPostion.add(new Vector2D(2304,416-50));

@@ -2,26 +2,16 @@ package game;
 
 import bases.GameObject;
 import bases.ImageUtil;
-import bases.Vector2D;
-import bases.ViewPort;
 import bases.scenes.SceneManager;
-import game.maps.Map;
 import inputs.InputManager;
-import plant.Plant;
-import plant.PlantBullet;
-import plant.PlantSpawner;
 import player.Player;
-import player.PlayerBullet;
 import scenes.GameOverScene;
 import scenes.GamePlayScene;
 import scenes.OpeningScene;
-import sun.awt.im.InputMethodManager;
-import zombie.ZombieSpawner;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Vector;
 
 public class GameCanvas extends JPanel {
 
@@ -45,7 +35,7 @@ public class GameCanvas extends JPanel {
     public void run(){
         GameObject.runAll();
         SceneManager.changeSceneIfNeeded();
-        if(SceneManager.currentScene instanceof  GamePlayScene){
+        if(SceneManager.currentScene instanceof GamePlayScene){
             GamePlayScene gamePlayScene= (GamePlayScene) SceneManager.currentScene;
             gamePlayScene.viewPort.follow(gamePlayScene.player);
         }
