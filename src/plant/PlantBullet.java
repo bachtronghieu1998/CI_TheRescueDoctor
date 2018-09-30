@@ -1,5 +1,6 @@
 package plant;
 
+import Platform.Platform;
 import bases.*;
 import bases.scenes.SceneManager;
 import player.Player;
@@ -25,6 +26,7 @@ public class PlantBullet extends GameObject {
         super.run();
         move();
         hitPlayer();
+        hitPlatForm();
     }
 
     void move(){
@@ -58,6 +60,13 @@ public class PlantBullet extends GameObject {
             count=0;
         }
 
+    }
+
+    private void hitPlatForm() {
+         Platform platform = GameObject.checkCollision(boxCollider,Platform.class);
+             if (platform != null) {
+                 this.isActive = false;
+             }
     }
 
     @Override
