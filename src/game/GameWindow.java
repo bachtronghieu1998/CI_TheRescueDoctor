@@ -34,7 +34,7 @@ public class GameWindow extends JFrame {
         });
         // change later
         this.setSize(886,666);
-        this.setResizable(false);
+//        this.setResizable(false);
         this.setTitle("The-Resue-Doctor");
         gameCanvas = new GameCanvas();
         this.setContentPane(gameCanvas);

@@ -1,5 +1,6 @@
 package player;
 
+import Platform.Platform;
 import bases.Animation;
 import bases.BoxCollider;
 import bases.GameObject;
@@ -22,6 +23,7 @@ public class PlayerBullet extends GameObject {
 //        deactivateIfNeeded();
         move();
         hitZombies();
+        hitPlatForm();
     }
 
     private void hitZombies() {
@@ -45,6 +47,13 @@ public class PlayerBullet extends GameObject {
 
     private void deactivateIfNeeded() {
         if (this.position.x > 886) {
+            this.isActive = false;
+        }
+    }
+
+    private void hitPlatForm() {
+        Platform platform = GameObject.checkCollision(boxCollider,Platform.class);
+        if (platform != null) {
             this.isActive = false;
         }
     }

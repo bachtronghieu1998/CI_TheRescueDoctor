@@ -3,6 +3,8 @@ package Platform;
 import bases.BoxCollider;
 import bases.GameObject;
 import bases.ImageRenderer;
+import player.PlayerBullet;
+import player.PlayerBulletl;
 
 import java.awt.*;
 
@@ -42,6 +44,12 @@ public class Platform extends GameObject
                 break;
             }
         }
+    }
+
+    @Override
+    public void run() {
+        super.run();
+
     }
 
 

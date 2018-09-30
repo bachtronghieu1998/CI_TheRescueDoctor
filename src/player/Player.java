@@ -3,12 +3,15 @@ package player;
 import Platform.Platform;
 import bases.*;
 import bases.scenes.SceneManager;
+import buff.AddBlood;
+import buff.AddBullet;
 import plant.Plant;
 import plant.PlantExplosion;
 import scenes.GameOverScene;
 import zombie.Zombie;
 import Platform.Water;
 import java.awt.*;
+import java.util.Random;
 
 public class Player extends GameObject {
 
@@ -23,6 +26,7 @@ public class Player extends GameObject {
     public static int countTree;
    public boolean isDrop;
    public boolean isWin;
+   Random random;
 
     public Player(int x, int y) {
         super(x,y);
@@ -38,7 +42,7 @@ public class Player extends GameObject {
         this.countTree=0;
         this.isDrop=false;
         this.isWin=false;
-
+        random = new Random();
     }
 
     public Vector2D getPosition(){
@@ -76,6 +80,8 @@ public class Player extends GameObject {
            animate();
            getHit();
            dropWater();
+           eatBullet();
+           eatBlood();
        }else if(isDrop){
            if(frameCounter.expired){
                this.Destroy();
@@ -96,7 +102,6 @@ public class Player extends GameObject {
         bloodBar.position.x=this.position.x;
         bloodBar.position.y=this.position.y;
     }
-
 
     public void dropWater(){
         Water water = GameObject.checkCollision(this.boxCollider, Water.class);
@@ -121,6 +126,14 @@ public class Player extends GameObject {
     public void render(Graphics g, ViewPort viewPort) {
         super.render(g, viewPort);
         bloodBar.render(g,viewPort.translate(this.position));
+    }
+
+    private void eatBullet() {
+        AddBullet addBullet = GameObject.checkCollision(this.boxCollider, AddBullet.class);
+        if (addBullet != null) {
+            addBullet.isActive = false;
+            playerShoot.count += random.nextInt(6);
+        }
     }
 
     public  void backWard(){
@@ -151,6 +164,9 @@ public class Player extends GameObject {
             countLive--;
             backWard();
         }
+        if (countLive == 3) {
+            bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar1.png");
+        }
         if (countLive == 2) {
             bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar2.png");
         }
@@ -159,6 +175,18 @@ public class Player extends GameObject {
         }
         if (countLive == 0) {
             this.Destroy();
+        }
+    }
+
+    private void eatBlood() {
+        AddBlood addBlood = GameObject.checkCollision(this.boxCollider,AddBlood.class);
+        if (addBlood != null) {
+            addBlood.isActive = false;
+            if (this.countLive == 3) {
+                this.countLive += 0;
+            } else {
+                this.countLive++;
+            }
         }
     }
 

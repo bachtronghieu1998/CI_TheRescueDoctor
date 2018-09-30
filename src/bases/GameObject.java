@@ -15,6 +15,8 @@ public class GameObject {
      private static ArrayList<GameObject> newGameObjects=new ArrayList<>();
      public static ArrayList<Vector2D> zombPosition=new ArrayList<>();
     public static ArrayList<Vector2D> plantPostion=new ArrayList<>();
+    public static ArrayList<Vector2D> addBulletPostion=new ArrayList<>();
+    public static ArrayList<Vector2D> addBloodPostion=new ArrayList<>();
      public boolean isActive;
     public boolean isAlive;
 

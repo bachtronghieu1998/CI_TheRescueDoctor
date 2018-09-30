@@ -7,7 +7,7 @@ import inputs.InputManager;
 public class PlayerShoot {
     private boolean shootLock;
     FrameCounter frameCounter = new FrameCounter(20);
-    public int count = 100;
+    public int count = 10;
     boolean limit = true;
 
     public void run(Player player) {
