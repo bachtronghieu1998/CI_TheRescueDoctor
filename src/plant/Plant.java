@@ -1,13 +1,13 @@
 package plant;
 
 import bases.*;
+import player.Player;
 import player.PlayerBullet;
 
 import java.awt.*;
 
 public class Plant extends GameObject {
-    public static int count;
-    FrameCounter counter;
+    public static   FrameCounter counter=new FrameCounter(70);;
     public Plant(int x, int y) {
         super(x, y);
       //  this.renderer=new ImageRenderer("images/plant/Plant bite anim2.png");
@@ -18,12 +18,15 @@ public class Plant extends GameObject {
                 ImageUtil.LoadImage("images/plant/Plant bite anim5.png")
                 );
         this.boxCollider=new BoxCollider(100,66);
-        counter=new FrameCounter(100);
+        counter=new FrameCounter(70);
     }
 
-    @Override
+
+
+
     public void run() {
         super.run();
+
         if(counter.expired){
             GameObject.generic((int)position.x,(int)position.y,PlantBullet.class);
             counter.reset();
@@ -36,8 +39,8 @@ public class Plant extends GameObject {
     public void getHit(){
         PlayerBullet playerBullet = GameObject.checkCollision(this.boxCollider, PlayerBullet.class);
         if(playerBullet!=null){
+            Player.countTree++;
             this.isActive=false;
-            count++;
             playerBullet.isActive=false;
            GameObject.add(new PlantExplosion((int)this.position.x,(int)this.position.y-70));
         }

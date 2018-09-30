@@ -37,20 +37,16 @@ public class PlantBullet extends GameObject {
             if(player!=null){
                 count++;
                 this.isActive=false;
-                if(check){
-                    player.count--;
-                    check=false;
-                }
-                player.position.addUp(0,3);
-                if (player.count == 2) {
-                    System.out.println("Knock");
+                player.backWard();
+                player.countLive--;
+                if (player.countLive == 2) {
                     player.bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar2.png");
-                }else  if (player.count == 1){
+                }else  if (player.countLive == 1){
                     player.bloodBar.image= ImageUtil.LoadImage("images/player/bloodbar/bloodbar3.png");
 
                 }
 
-                if (player.count == 0) {
+                if (player.countLive == 0) {
                     player.Destroy();
                 }
 

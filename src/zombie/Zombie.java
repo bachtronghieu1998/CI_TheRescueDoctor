@@ -54,7 +54,6 @@ public class Zombie extends GameObject {
             water = GameObject.checkCollision(this.boxCollider.shift(5,0), Water.class);
         }
         if (water != null) {
-            System.out.println("hit water");
             return true;
         }
         return false;

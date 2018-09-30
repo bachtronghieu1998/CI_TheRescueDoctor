@@ -23,13 +23,9 @@ public class ZombieSpawner extends GameObject {
 //        if(frameCounter.expired){
             Player p=null;
             ArrayList<Integer> positonEnemy=new ArrayList<>();
-            for(int i=0;i<GameObject.gameObjects.size();i++){
-                if(GameObject.gameObjects.get(i) instanceof Player){
-                    p=(Player) GameObject.gameObjects.get(i);
-                }
-            }
+             p=  GameObject.getPlayer();
             if(p!=null){
-                float tempX=p.position.x+900;
+                float tempX=p.position.x+750;
                 for(int i=0;i<GameObject.zombPosition.size();i++){
                     if(GameObject.zombPosition.get(i).x<tempX && GameObject.zombPosition.get(i).x>0){
                         GameObject.generic((int)GameObject.zombPosition.get(i).x, (int) GameObject.zombPosition.get(i).y,Zombie.class);

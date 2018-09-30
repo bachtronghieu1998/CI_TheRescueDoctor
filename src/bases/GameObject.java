@@ -1,5 +1,7 @@
 package bases;
 
+import player.Player;
+
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -76,6 +78,15 @@ public class GameObject {
         }
     }
 
+    public static Player getPlayer(){
+        for(GameObject go: gameObjects){
+            if(go instanceof  Player){
+                return (Player) go;
+            }
+        }
+        return null;
+
+    }
 
 
     public static   <T extends GameObject> T generic(int x,int y, Class<T> cls){

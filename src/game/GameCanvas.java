@@ -63,9 +63,9 @@ public class GameCanvas extends JPanel {
          g2d.drawImage(ImageUtil.LoadImage("images/bullets/bullet1.png"), 10, 10,null);
          g2d.drawString(Integer.toString(gamePlayScene.player.playerShoot.count),50,40);
          g2d.drawImage(ImageUtil.LoadImage("images/zombie/icon/zomIcon.png"), 100, 20,null);
-         g2d.drawString(Integer.toString(PlayerBullet.count),140,40);
+         g2d.drawString(Integer.toString(Player.countZom),140,40);
          g2d.drawImage(ImageUtil.LoadImage("images/plant/icon/Plant bite anim1.png"), 170, 15,null);
-         g2d.drawString(Integer.toString(Plant.count),200,40);
+         g2d.drawString(Integer.toString(Player.countTree),200,40);
      }else if(SceneManager.currentScene instanceof GameOverScene){
          Background background=new Background(0,0);
          background.render(backBufferGraphic);
@@ -78,9 +78,9 @@ public class GameCanvas extends JPanel {
          g2d.drawImage(ImageUtil.LoadImage("images/bullets/bullet1.png"), 10, 5,null);
          g2d.drawString(Integer.toString(Player.playerShoot.count),50,40);
          g2d.drawImage(ImageUtil.LoadImage("images/zombie/icon/zomIcon.png"), 150, 15,null);
-         g2d.drawString(Integer.toString(PlayerBullet.count),190,40);
+         g2d.drawString(Integer.toString(Player.countZom),190,40);
          g2d.drawImage(ImageUtil.LoadImage("images/plant/icon/Plant bite anim1.png"), 250, 10,null);
-         g2d.drawString(Integer.toString(Plant.count),290,40);
+         g2d.drawString(Integer.toString(Player.countTree),290,40);
          myFont = new Font ("Courier New", 1, 20);
          g2d.setFont(myFont);
          g2d.drawString("Press Enter to start again",886/2-200,500);

@@ -3,6 +3,7 @@ package player;
 import Platform.Platform;
 import bases.*;
 import bases.scenes.SceneManager;
+import plant.Plant;
 import plant.PlantExplosion;
 import scenes.GameOverScene;
 import zombie.Zombie;
@@ -15,9 +16,14 @@ public class Player extends GameObject {
     public static PlayerShoot playerShoot;
     PlayerAnimator playerAnimator;
     public  float gravity=0.8f;
-    public int count;
+    public int countLive;
    public BloodBar bloodBar;
     FrameCounter frameCounter;
+    public static int countZom;
+    public static int countTree;
+   public boolean isDrop;
+   public boolean isWin;
+
     public Player(int x, int y) {
         super(x,y);
         playerMove = new PlayerMove();
@@ -25,26 +31,68 @@ public class Player extends GameObject {
         playerAnimator = new PlayerAnimator();
         renderer = this.playerAnimator;
         boxCollider = new BoxCollider(x,y,60,111);
-        count = 3;
+        countLive = 3;
         bloodBar = new BloodBar();
-        frameCounter=new FrameCounter(36);
+        frameCounter=new FrameCounter(50);
+        this.countZom = 0;
+        this.countTree=0;
+        this.isDrop=false;
+        this.isWin=false;
+
     }
 
     public Vector2D getPosition(){
         return this.position;
     }
 
+    public void updateTreeBullet(){
+        Player player= getPlayer();
+        if(this.position.x <874){
+            Plant.counter.limit=80;
+        }else if(player.position.x<182*32){
+            Plant.counter.limit=80;
+        }else if(player.position.x<283*32){
+            Plant.counter.limit=75;
+        }else if(player.position.x<343*12){
+            Plant.counter.limit=70;
+        }else{
+            Plant.counter.limit=65;
+        }
+    }
+
+    public void Win(){
+        if(this.position.x >392*32){
+            isWin=true;
+        }
+    }
     @Override
     public void run() {
         super.run();
-        if(!this.isAlive){
-            Destroy();
-        }
-         move();
-        shoot();
-        animate();
-        getHit();
-        dropWater();
+       if(!isDrop && !isWin){
+           Win();
+           updateTreeBullet();
+           move();
+           shoot();
+           animate();
+           getHit();
+           dropWater();
+       }else if(isDrop){
+           if(frameCounter.expired){
+               this.Destroy();
+           }else{
+               GameObject.add(new PlantExplosion((int)this.position.x,(int)this.position.y));
+               frameCounter.run();
+           }
+       }else if(isWin){
+           if(frameCounter.expired){
+               this.Destroy();
+           }else{
+               GameObject.add(new WinAnimation((int)this.position.x,(int)this.position.y-150));
+               frameCounter.run();
+           }
+       }
+
+
         bloodBar.position.x=this.position.x;
         bloodBar.position.y=this.position.y;
     }
@@ -53,14 +101,7 @@ public class Player extends GameObject {
     public void dropWater(){
         Water water = GameObject.checkCollision(this.boxCollider, Water.class);
         if(water!=null){
-            if(frameCounter.expired){
-                this.isAlive=false;
-                frameCounter.reset();
-            }else{
-                GameObject.add(new PlantExplosion((int)this.position.x,(int)this.position.y));
-                frameCounter.run();
-            }
-
+          isDrop=true;
 
         }
     }
@@ -82,41 +123,41 @@ public class Player extends GameObject {
         bloodBar.render(g,viewPort.translate(this.position));
     }
 
+    public  void backWard(){
+        BoxCollider tempBox=  this.boxCollider.shift(-30,-30);
+        if(GameObject.checkCollision(tempBox,Platform.class)!=null){
+            int distance=-1;
+            boolean moveContinue=true;
+            while(moveContinue){
+                BoxCollider temp=this.boxCollider.shift(distance,0);
+                if(GameObject.checkCollision(temp, Platform.class)!=null){
+                    moveContinue=false;
+                }else{
+                    distance-=1;
+                    this.position.addUp(distance,0);
+                    this.boxCollider.position.addUp(distance,0);
+                }
+
+            }
+        }else{
+            this.position.addUp(-30,-30);
+            this.boxCollider.position.addUp(-30,-30);
+        }
+    }
+
     public void getHit() {
         Zombie zombie = GameObject.checkCollision(this.boxCollider, Zombie.class);
         if (zombie != null) {
-            count--;
-           //zombie.position.x+=10;
-
-             BoxCollider tempBox=  this.boxCollider.shift(-30,0);
-             if(GameObject.checkCollision(tempBox,Platform.class)!=null){
-                 int distance=-1;
-                 boolean moveContinue=true;
-                 while(moveContinue){
-                     BoxCollider temp=this.boxCollider.shift(distance,0);
-                     if(GameObject.checkCollision(temp, Platform.class)!=null){
-                         moveContinue=false;
-                     }else{
-                         distance-=1;
-                         this.position.addUp(distance,0);
-                         this.boxCollider.position.addUp(distance,0);
-                     }
-
-                 }
-             }else{
-                 this.position.addUp(-30,-30);
-                 this.boxCollider.position.addUp(-30,-30);
-             }
-
-//            this.position.addUp(0,-800);
+            countLive--;
+            backWard();
         }
-        if (count == 2) {
+        if (countLive == 2) {
             bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar2.png");
         }
-        if (count == 1) {
+        if (countLive == 1) {
             bloodBar.image = ImageUtil.LoadImage("images/player/bloodbar/bloodbar3.png");
         }
-        if (count == 0) {
+        if (countLive == 0) {
             this.Destroy();
         }
     }

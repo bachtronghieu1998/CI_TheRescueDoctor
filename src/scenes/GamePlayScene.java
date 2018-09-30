@@ -54,9 +54,18 @@ public class GamePlayScene implements Scene {
         GameObject.plantPostion.add(new Vector2D(254*32,13*32-50));
         GameObject.plantPostion.add(new Vector2D(278*32,14*32-50));
         GameObject.plantPostion.add(new Vector2D(279*32,6*32-50));
+
+        GameObject.plantPostion.add(new Vector2D(297*32,9*32-50));
+        GameObject.plantPostion.add(new Vector2D(306*32,12*32-50));
+
         GameObject.plantPostion.add(new Vector2D(329*32,13*32-50));
+        GameObject.plantPostion.add(new Vector2D(335*32,11*32-50));
         GameObject.plantPostion.add(new Vector2D(338*32,12*32-50));
+
         GameObject.plantPostion.add(new Vector2D(358*32,11*32-50));
+        GameObject.plantPostion.add(new Vector2D(364*32,13*32-50));
+        GameObject.plantPostion.add(new Vector2D(371*32,15*32-50));
+
 //
 
     }

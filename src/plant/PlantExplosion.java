@@ -28,7 +28,7 @@ public class PlantExplosion extends GameObject {
 //                ImageUtil.LoadImage("images/plant/plantExplosion/fire18.png") ,
 //                ImageUtil.LoadImage("images/plant/plantExplosion/fire19.png")
 //        );
-        this.renderer=new Animation(10,true,
+        this.renderer=new Animation(5,true,
                 ImageUtil.LoadImage("images/plant/plantExplosion2/fire1.png") ,
                 ImageUtil.LoadImage("images/plant/plantExplosion2/fire2.png") ,
                 ImageUtil.LoadImage("images/plant/plantExplosion2/fire3.png") ,
