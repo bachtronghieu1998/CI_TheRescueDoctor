@@ -39,7 +39,7 @@ public class PlantBullet extends GameObject {
         boolean check=true;
         if(count<1){
             if(player!=null){
-                SceneManager.mediaPlayer = AudioUtils.playMedia("Sound/162465__kastenfrosch__lostitem.mp3");
+                AudioUtils.playMedia("Sound/player/44428__thecheeseman__hurt1.wav");
                 count++;
                 this.isActive=false;
                 player.backWard();

@@ -5,6 +5,7 @@ import bases.*;
 import bases.scenes.SceneManager;
 import buff.AddBlood;
 import buff.AddBullet;
+import javafx.scene.media.MediaPlayer;
 import plant.Plant;
 import plant.PlantExplosion;
 import scenes.GameOverScene;
@@ -107,7 +108,8 @@ public class Player extends GameObject {
     public void dropWater(){
         Water water = GameObject.checkCollision(this.boxCollider, Water.class);
         if(water!=null){
-          isDrop=true;
+            AudioUtils.playMedia("Sound/Explosion/191691__fridobeck__explosion-1.wav");
+            isDrop=true;
 
         }
     }
@@ -132,7 +134,7 @@ public class Player extends GameObject {
     private void eatBullet() {
         AddBullet addBullet = GameObject.checkCollision(this.boxCollider, AddBullet.class);
         if (addBullet != null) {
-            SceneManager.mediaPlayer = AudioUtils.playMedia("Sound/162467__kastenfrosch__gotitem (1).mp3");
+            AudioUtils.playMedia("Sound/162467__kastenfrosch__gotitem (1).mp3");
             addBullet.isActive = false;
             playerShoot.count += random.nextInt(6);
             if (playerShoot.count > 0) {
@@ -166,7 +168,9 @@ public class Player extends GameObject {
     public void getHit() {
         Zombie zombie = GameObject.checkCollision(this.boxCollider, Zombie.class);
         if (zombie != null) {
+            AudioUtils.playMedia("Sound/player/44428__thecheeseman__hurt1.wav");
             countLive--;
+
             backWard();
         }
         if (countLive == 3) {
@@ -186,7 +190,7 @@ public class Player extends GameObject {
     private void eatBlood() {
         AddBlood addBlood = GameObject.checkCollision(this.boxCollider,AddBlood.class);
         if (addBlood != null) {
-            SceneManager.mediaPlayer = AudioUtils.playMedia("Sound/162467__kastenfrosch__gotitem (1).mp3");
+             AudioUtils.playMedia("Sound/162467__kastenfrosch__gotitem (1).mp3");
             addBlood.isActive = false;
             if (this.countLive == 3) {
                 this.countLive += 0;

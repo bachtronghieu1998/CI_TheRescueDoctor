@@ -6,6 +6,7 @@ import bases.BoxCollider;
 import bases.GameObject;
 import bases.ImageUtil;
 import bases.scenes.SceneManager;
+import javafx.scene.media.MediaPlayer;
 import tklibs.AudioUtils;
 import zombie.Zombie;
 
@@ -31,7 +32,8 @@ public class PlayerBullet extends GameObject {
     private void hitZombies() {
         Zombie zombie = GameObject.checkCollision(this.boxCollider, Zombie.class);
         if (zombie!=null){
-            SceneManager.mediaPlayer = AudioUtils.playMedia("Sound/162464__kastenfrosch__message.mp3");
+          AudioUtils.playMedia("Sound/zombie/348310__redafs__zombie-monster-scream.wav");
+           AudioUtils.playMedia("Sound/162464__kastenfrosch__message.mp3");
             zombie.getHit();
             this.isActive=false;
             Player.countZom++;

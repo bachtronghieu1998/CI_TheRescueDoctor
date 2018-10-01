@@ -35,6 +35,7 @@ public class GameCanvas extends JPanel {
     public void run(){
         GameObject.runAll();
         SceneManager.changeSceneIfNeeded();
+        SceneManager.mediaPlayer.play();
         if(SceneManager.currentScene instanceof GamePlayScene){
             GamePlayScene gamePlayScene= (GamePlayScene) SceneManager.currentScene;
             gamePlayScene.viewPort.follow(gamePlayScene.player);

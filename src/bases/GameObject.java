@@ -43,7 +43,7 @@ public class GameObject {
         newGameObjects.clear();
         zombPosition.clear();
         plantPostion.clear();
-        SceneManager.mediaPlayer.dispose();
+     //   SceneManager.mediaPlayer.dispose();
     }
 
     public void run(){

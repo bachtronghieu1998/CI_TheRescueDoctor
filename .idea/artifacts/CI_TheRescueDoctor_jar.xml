@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CI_TheRescueDoctor:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CI_TheRescueDoctor_jar</output-path>
+    <root id="archive" name="CI_TheRescueDoctor.jar">
+      <element id="module-output" name="CI_TheRescueDoctor" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.1/gson-2.8.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

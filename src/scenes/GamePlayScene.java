@@ -4,21 +4,23 @@ import bases.GameObject;
 import bases.Vector2D;
 import bases.ViewPort;
 import bases.scenes.Scene;
+import bases.scenes.SceneManager;
 import buff.AddBloodSpawner;
 import buff.AddBulletSpawner;
 import game.Background;
 import game.maps.Map;
+import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 import plant.PlantSpawner;
 import player.Player;
+import tklibs.AudioUtils;
 import zombie.ZombieSpawner;
 
 public class GamePlayScene implements Scene {
    public Player player;
    public ViewPort viewPort;
    public Background background;
-    public GamePlayScene() {
-
-    }
+  MediaPlayer mediaPlayer;
 
     @Override
     public void denit() {
@@ -26,10 +28,19 @@ public class GamePlayScene implements Scene {
          viewPort=null;
          player=null;
          background=null;
+        //SceneManager.mediaPlayer.dispose();
+
     }
 
     @Override
     public void init() {
+        AudioUtils.initialize();
+        SceneManager.mediaPlayer= AudioUtils.playMedia("Sound/gameplay/243626__lebaston100__heavy-rain-with-thunder.wav");
+        SceneManager.mediaPlayer.setOnEndOfMedia(new Runnable() {
+            public void run() {
+                SceneManager.mediaPlayer.seek(Duration.ZERO);
+            }
+        });
         viewPort=new ViewPort();
         viewPort.followOffset.x=-80/2;
         background=new Background(0,0);
@@ -85,7 +96,7 @@ public class GamePlayScene implements Scene {
 
         GameObject.plantPostion.add(new Vector2D(329*32,13*32-50));
         GameObject.plantPostion.add(new Vector2D(335*32,11*32-50));
-        GameObject.plantPostion.add(new Vector2D(338*32,12*32-50));
+      //  GameObject.plantPostion.add(new Vector2D(338*32,12*32-50));
 
         GameObject.plantPostion.add(new Vector2D(358*32,11*32-50));
         GameObject.plantPostion.add(new Vector2D(364*32,13*32-50));

@@ -20,11 +20,11 @@ public class GameOverScene implements Scene {
     public void init() {
         AudioUtils.initialize();
         SceneManager.mediaPlayer = AudioUtils.playMedia("Sound/Power Bots Loop.wav");
-        SceneManager.mediaPlayer.setOnEndOfMedia(new Runnable() {
-            public void run() {
-                SceneManager.mediaPlayer.seek(Duration.ZERO);
-            }
-        });
+//        SceneManager.mediaPlayer.setOnEndOfMedia(new Runnable() {
+//            public void run() {
+//                SceneManager.mediaPlayer.seek(Duration.ZERO);
+//            }
+//        });
         background=new Background(0,0);
         GameObject.add(background);
     }

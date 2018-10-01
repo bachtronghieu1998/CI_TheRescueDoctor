@@ -3,6 +3,7 @@ package plant;
 import bases.*;
 import player.Player;
 import player.PlayerBullet;
+import tklibs.AudioUtils;
 
 import java.awt.*;
 
@@ -39,6 +40,7 @@ public class Plant extends GameObject {
     public void getHit(){
         PlayerBullet playerBullet = GameObject.checkCollision(this.boxCollider, PlayerBullet.class);
         if(playerBullet!=null){
+            AudioUtils.playMedia("Sound/plant/268942__robinhood76__05637-small-fairy-hit-moan.wav");
             Player.countTree++;
             this.isActive=false;
             playerBullet.isActive=false;
