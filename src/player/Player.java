@@ -135,6 +135,9 @@ public class Player extends GameObject {
             SceneManager.mediaPlayer = AudioUtils.playMedia("Sound/162467__kastenfrosch__gotitem (1).mp3");
             addBullet.isActive = false;
             playerShoot.count += random.nextInt(6);
+            if (playerShoot.count > 0) {
+                playerShoot.limit = true;
+            }
         }
     }
 
