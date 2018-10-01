@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f47f1a71-9905-4317-8ba0-d87e84a5da4e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/buff/AddBlood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buff/AddBlood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buff/AddBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buff/AddBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="D:\CI_TheRescueDoctor\.idea\shelf/" />
@@ -40,6 +39,8 @@
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.lifecycle.project" />
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
@@ -56,7 +57,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/buff/AddBullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="-275">
               <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
             </state>
           </provider>
@@ -149,6 +150,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538398303386" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -188,12 +190,12 @@
       <option name="presentableId" value="Default" />
       <updated>1537981179053</updated>
     </task>
-    <task id="LOCAL-00001" summary="Update blood follow player">
-      <created>1537985567552</created>
+    <task id="LOCAL-00001" summary="ad">
+      <created>1538397306089</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1537985567552</updated>
+      <updated>1538397306089</updated>
     </task>
     <task id="LOCAL-00002" summary="Update _ HKT _ 2">
       <created>1538179156013</created>
@@ -230,13 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1538396771925</updated>
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7188841" visible="true" weight="0.25189108" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7188841" visible="true" weight="0.25189108" />
       <window_info id="Structure" order="1" sideWeight="0.2811159" side_tool="true" weight="0.22012103" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -245,7 +248,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.2841782" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.2841782" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -351,7 +354,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/buff/AddBullet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="-275">
           <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
         </state>
       </provider>

@@ -60,7 +60,7 @@ public class GamePlayScene implements Scene {
 
     private void addBlood() {
         GameObject.addBloodPostion.add(new Vector2D(120*32,18*32));
-        GameObject.addBloodPostion.add(new Vector2D(92*32,10*32));
+        GameObject.addBloodPostion.add(new Vector2D(94*32,12*32));
         GameObject.addBloodPostion.add(new Vector2D(178*32,17*32));
         GameObject.addBloodPostion.add(new Vector2D(207*32,12*32));
         GameObject.addBloodPostion.add(new Vector2D(182*32,17*32));
